@@ -788,6 +788,7 @@ class Component extends DCLogic {
       goHome: go('home'), goBrand: go('brand'), goEditorial: go('editorial'), goProof: go('proof'), goFollow: go('follow'),
       nav: this.pages.map(([id,label]) => ({ id, label, go: go(id), color: pg===id ? '#F4F2EE' : '#8A8A8A', line: pg===id ? '#C9CCCE' : 'transparent' })),
       homeFrames: [
+        {n:'01',img:R('img/assets-frames-web-home-studio.jpg'),numA:'25.7509 N',numB:'80.2604 W',bot1:['Coral Gables','Florida'],bot2:['305']},
         {n:'02',img:R('img/assets-frames-web-feed-02.jpg'),numA:'25.7617 N',numB:'80.1918 W',bot1:['Miami','Florida'],bot2:['305']},
         {n:'03',img:R('img/assets-frames-web-home-precision.jpg'),numA:'0930 2400',numB:'02 41',bot1:['Miami','Florida'],bot2:['305']},
         {n:'04',img:R('img/assets-frames-web-home-waxup.jpg'),numA:'1925',numB:'33134',bot1:['Miami','Florida'],bot2:['305']},
