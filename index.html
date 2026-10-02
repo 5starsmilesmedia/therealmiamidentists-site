@@ -201,18 +201,46 @@
 <link rel="stylesheet" href="_ds/5-star-smiles-design-system-9c05a51a-a73e-4a38-bd58-497ac7667003/tokens/effects.css">
 <link rel="stylesheet" href="_ds/5-star-smiles-design-system-9c05a51a-a73e-4a38-bd58-497ac7667003/styles.css">
 <script src="_ds/5-star-smiles-design-system-9c05a51a-a73e-4a38-bd58-497ac7667003/_ds_bundle.js"></script>
-<style>body{margin:0;background:#050505;font-family:'Bodoni Moda',Georgia,serif;font-variation-settings:'opsz' 11;font-optical-sizing:none;color:#F4F2EE}a{color:#C9CCCE;text-decoration:none}a:hover{color:#F4F2EE}p{margin:0}img{display:block}</style>
+<style>body{margin:0;background:#050505;font-family:'Bodoni Moda',Georgia,serif;font-variation-settings:'opsz' 11;font-optical-sizing:none;color:#F4F2EE}a{color:#C9CCCE;text-decoration:none}a:hover{color:#F4F2EE}p{margin:0}img{display:block}
+@media (max-width:640px){
+.m-bar{padding:10px 16px 0!important;gap:0!important;row-gap:4px!important}
+.m-bar>span{order:2;font-size:8px!important}
+.m-nav{order:3;width:calc(100% + 32px);margin:0 -16px;padding:0 6px;flex-wrap:nowrap!important;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:0!important}
+.m-nav::-webkit-scrollbar{display:none}
+.m-nav>span{white-space:nowrap;padding:12px 10px!important;letter-spacing:.22em!important}
+[style*="padding: 14px 40px"]{padding-left:16px!important;padding-right:16px!important}
+[style*="padding: 56px 40px"],[style*="padding: 96px 40px"],[style*="padding: 72px 40px"],[style*="padding: 48px 40px"],[style*="padding: 32px 40px"],[style*="padding: 40px 40px"],[style*="padding: 0px 40px"],[style*="padding: 64px 40px"]{padding-left:20px!important;padding-right:20px!important}
+[style*="padding: 96px 40px"]{padding-top:64px!important}
+[style*="padding: 48px 32px"]{padding-left:20px!important;padding-right:20px!important}
+[style*="width: calc(100% - 80px)"]{width:calc(100% - 40px)!important}
+[style*="gap: 1px; width: calc(100% - 80px)"]{flex-wrap:wrap!important}
+[style*="width: calc((100% - 3px) / 4)"]{width:calc((100% - 1px) / 2)!important}
+[style*="grid-template-columns: repeat(4, minmax(0px, 1fr))"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+[style*="font-size: clamp(48px, 8vw, 128px)"],[style*="font-size: clamp(40px, 7vw, 120px)"]{font-size:38px!important;line-height:1!important}
+[style*="font-size: clamp(56px, 11vw, 168px)"]{font-size:52px!important}
+[style*="font-size: clamp(40px, 6vw, 96px)"]{font-size:36px!important}
+[style*="font-size: clamp(32px, 4.5vw, 64px)"],[style*="font-size: clamp(36px, 4.5vw, 64px)"],[style*="font-size: clamp(32px, 4vw, 56px)"]{font-size:30px!important}
+[style*="grid-template-columns: repeat(5, minmax(0px, 1fr))"]{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+[style*="left: 32px; width: 1px"]{left:10px!important}
+[style*="left: 64px; width: 1px"]{left:18px!important}
+[style*="right: 32px; width: 1px"]{right:10px!important}
+[style*="right: 64px; width: 1px"]{right:18px!important}
+[style*="left: 80px; right: 80px"]{left:26px!important;right:26px!important}
+[style*="left: 40px; top: 80px"]{display:none!important}
+[style*="align-items: flex-end; text-align: right; gap: 2px"]{display:none!important}
+}
+</style>
 </helmet>
 <div style="min-height:100vh;background:#050505;display:flex;flex-direction:column">
 
 <!-- Nav -->
 <div style="position:sticky;top:0;z-index:20;background:rgba(5,5,5,.82);backdrop-filter:blur(12px);border-bottom:1px solid #262626">
-<div style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 40px;flex-wrap:wrap">
+<div class="m-bar" style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px 40px;flex-wrap:wrap">
 <div onClick="{{ goHome }}" style="display:flex;align-items:center;gap:14px;cursor:pointer">
 <div style="width:44px;height:44px;flex:none"><div style="transform:scale(0.1294);transform-origin:top left"><div style="width:340px;height:340px;border-radius:999px;background:#050505;border:2.5px solid #FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;box-sizing:border-box;padding-top:2px;overflow:hidden"><div style="display:flex;align-items:center;gap:14px;width:100%"><div style="flex:1;height:1.3px;background:#FFFFFF"></div><span style="font-weight:500;text-transform:uppercase;display:inline-block;transform:scaleX(.78);white-space:nowrap;color:#FFFFFF;font-size:30px;letter-spacing:.06em;line-height:1;flex:none;margin:0 -16px">THE REAL</span><div style="flex:1;height:1.3px;background:#FFFFFF"></div></div><span style="font-weight:500;text-transform:uppercase;display:inline-block;white-space:nowrap;color:#FFFFFF;font-size:97px;letter-spacing:-.015em;line-height:.82;margin-top:14px;transform:scaleX(.85)">MIAMI</span><span style="font-weight:500;text-transform:uppercase;display:inline-block;white-space:nowrap;color:#FFFFFF;font-size:64px;letter-spacing:-.005em;line-height:.82;margin-top:14px;transform:scaleX(.85)">DENTISTS</span><div style="width:248px;height:5px;background:#FFFFFF;margin-top:20px"></div></div></div></div>
 <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:8px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:#C9CCCE">The real</span><span style="font-weight:600;font-size:15px;line-height:1;letter-spacing:-.02em;text-transform:uppercase">Miami Dentists</span></div>
 </div>
-<div style="display:flex;gap:4px;flex-wrap:wrap">
+<div class="m-nav" style="display:flex;gap:4px;flex-wrap:wrap">
 <sc-for list="{{ nav }}" as="n" hint-placeholder-count="9">
 <span onClick="{{ n.go }}" style="cursor:pointer;font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;padding:10px 12px;color:{{ n.color }};border-bottom:1px solid {{ n.line }}" style-hover="color:#F4F2EE">{{ n.label }}</span>
 </sc-for>
@@ -233,7 +261,7 @@
 <span style="font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:#C9CCCE">Miami's authority on the modern smile</span>
 <span style="font-weight:600;font-size:clamp(56px,11vw,168px);line-height:.92;letter-spacing:-.03em;text-transform:uppercase;color:#F4F2EE;max-width:1400px;text-wrap:balance">The truth about teeth<span style="color:#C9CCCE">.</span></span>
 <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap">
-<p style="font-size:clamp(16px,1.4vw,20px);line-height:1.5;color:#B8B6B1;max-width:560px;text-wrap:pretty">Editorial, informed and unmistakably Miami. We explain what excellent cosmetic dentistry looks like — and help you see the difference between a white smile and a beautifully designed one.</p>
+<p style="font-size:clamp(16px,1.4vw,20px);line-height:1.5;color:#B8B6B1;max-width:560px;text-wrap:pretty">Editorial, informed and unmistakably Miami. We explain what excellent cosmetic dentistry looks like — and help you see the difference between a white smile and a beautifully designed one. This is the smile rebrand.</p>
 <div style="display:flex;gap:10px;flex-wrap:wrap">
 <span onClick="{{ goFollow }}" style="cursor:pointer;background:#F4F2EE;color:#050505;font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;padding:16px 28px" style-hover="background:#C9CCCE">Follow the page</span>
 <span onClick="{{ goEditorial }}" style="cursor:pointer;border:1px solid #F4F2EE;color:#F4F2EE;font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;padding:15px 28px" style-hover="background:#F4F2EE;color:#050505">Read the series</span>
@@ -293,7 +321,7 @@
 <div style="position:relative;padding:96px 40px;display:flex;flex-direction:column;align-items:center;gap:28px;max-width:900px">
 <span style="font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:#C9CCCE">The brand promise</span>
 <span style="font-weight:600;font-size:clamp(40px,6vw,96px);line-height:.96;letter-spacing:-.03em;text-transform:uppercase;text-wrap:balance">We tell the truth about teeth<span style="color:#C9CCCE">.</span></span>
-<p style="font-size:17px;line-height:1.6;color:#F4F2EE;max-width:560px;text-wrap:pretty">We help people recognize the difference between a white smile and a beautifully designed smile.</p>
+<p style="font-size:17px;line-height:1.6;color:#F4F2EE;max-width:560px;text-wrap:pretty">We help people recognize the difference between a white smile and a beautifully designed smile. Rebrand your smile.</p>
 <span onClick="{{ goProof }}" style="cursor:pointer;border:1px solid #F4F2EE;color:#F4F2EE;font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;padding:15px 28px" style-hover="background:#F4F2EE;color:#050505">See the proof</span>
 </div>
 </div>
@@ -602,14 +630,14 @@
 </div>
 </div>
 <div style="display:flex;flex-direction:column;gap:20px;width:100%">
-<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A;text-align:center;display:block">Same-day — elevator series · 3</span>
+<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A;text-align:center;display:block">Same-day resin veneers — Rebrand your smile in 4 hours</span>
 <div style="display:flex;justify-content:center;gap:1px;width:calc(100% - 80px);max-width:1400px;margin:0 auto">
 <sc-for list="{{ elevator }}" as="a" hint-placeholder-count="3"><img src="{{ a }}" alt="" style="width:calc((100% - 3px) / 4);flex:none;height:auto;display:block;background:#050505;border:1px solid #262626;box-sizing:border-box"></img></sc-for>
 </div>
 </div>
 <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#262626;border:1px solid #262626;width:calc(100% - 80px);max-width:1400px;margin-top:24px">
 <div style="background:#050505;padding:40px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px"><span style="font-weight:600;font-size:clamp(28px,3vw,44px);line-height:.95;letter-spacing:-.02em">2</span><span style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#8A8A8A">Visits · porcelain</span></div>
-<div style="background:#050505;padding:40px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px"><span style="font-weight:600;font-size:clamp(28px,3vw,44px);line-height:.95;letter-spacing:-.02em">Same-day</span><span style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#8A8A8A">Resin veneers</span></div>
+<div style="background:#050505;padding:40px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px"><span style="font-weight:600;font-size:clamp(28px,3vw,44px);line-height:.95;letter-spacing:-.02em">Same-day</span><span style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#8A8A8A">Resin veneers · Rebrand your smile in 4 hours</span></div>
 <div style="background:#050505;padding:40px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px"><span style="font-weight:600;font-size:clamp(28px,3vw,44px);line-height:.95;letter-spacing:-.02em">1-year</span><span style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#8A8A8A">Warranty on all smile designs</span></div>
 <div style="background:#050505;padding:40px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px"><span style="font-weight:600;font-size:clamp(28px,3vw,44px);line-height:.95;letter-spacing:-.02em">24/7</span><span style="font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#8A8A8A">Support · Full VIP Package</span></div>
 </div>
