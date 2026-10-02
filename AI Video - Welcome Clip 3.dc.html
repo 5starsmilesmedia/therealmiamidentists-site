@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400..900&display=swap">
+<script>window.OM_SCENES = '[{"name":"Mirror","dur":2,"desc":"Dental mirror frame drifts in, ticker fades up"},{"name":"Instruments","dur":2,"desc":"Handpiece mist, title lines pop in"},{"name":"Loupes","dur":2,"desc":"Behind the loupes, title holds"},{"name":"Elevator","dur":1.6,"desc":"Elevator smile, title fades"},{"name":"Endcard","dur":2.4,"desc":"Logo, welcome to the new website, follow us"}]';</script>
+<script>window.OM_PLAYBACK = '{"mode":"loop"}';</script>
+<script>window.OM_CLIP = 3;</script>
+<style>body{margin:0;background:#0d0d0d}</style>
+</helmet>
+<div style="width:100%;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;box-sizing:border-box">
+<div style="width:min(100%,720px);aspect-ratio:1">
+<x-import component-from-global-scope="WelcomeClip" from="./animations-v3.jsx ./welcome-clip.jsx" hint-size="100%,100%"></x-import>
+</div>
+</div>
+</x-dc>
+</body>
+</html>
