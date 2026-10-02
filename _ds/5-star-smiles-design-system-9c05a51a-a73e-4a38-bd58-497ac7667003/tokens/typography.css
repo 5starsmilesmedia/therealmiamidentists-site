@@ -1,0 +1,8 @@
+:root{
+--font-display:'Archivo',Helvetica,Arial,sans-serif;
+--font-sans:'Archivo',Helvetica,Arial,sans-serif;
+--text-2xs:10px;--text-xs:11px;--text-sm:13px;--text-base:15px;--text-lg:18px;--text-xl:24px;--text-2xl:34px;--text-3xl:48px;--text-4xl:72px;--text-5xl:110px;
+--track-caps:0.28em;--track-wide:0.18em;--track-display:-0.02em;--track-tight:-0.01em;
+--leading-display:0.98;--leading-tight:1.15;--leading-body:1.6;
+--weight-display:600;--weight-display-light:400;--weight-body:400;--weight-medium:500;--weight-caps:600;
+}
