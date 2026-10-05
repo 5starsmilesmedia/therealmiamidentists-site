@@ -386,23 +386,6 @@
 <!-- ═══ 04 FEED ═══ -->
 <sc-if value="{{ isFeed }}" hint-placeholder-val="{{ false }}">
 <div data-screen-label="04 The Feed">
-<div style="padding:96px 40px 64px;display:flex;flex-direction:column;gap:24px;border-bottom:1px solid #262626">
-<span style="font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A">04 · The feed</span>
-<span style="font-weight:600;font-size:clamp(48px,8vw,128px);line-height:.92;letter-spacing:-.03em;text-transform:uppercase">Miami smiles, examined<span style="color:#C9CCCE">.</span></span>
-<p style="font-size:18px;line-height:1.55;color:#B8B6B1;max-width:760px;text-wrap:pretty">Feed posts, square posts and the type-only grid. Every frame carries the disc, the handle and one line worth saving.</p>
-</div>
-<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A;padding:40px 40px 20px;display:block">Feed posts · 4:5 · 10</span>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:#262626;border-top:1px solid #262626;border-bottom:1px solid #262626">
-<sc-for list="{{ feed }}" as="a" hint-placeholder-count="10"><img src="{{ a }}" alt="" style="width:100%;aspect-ratio:4/5;object-fit:cover;background:#050505"></img></sc-for>
-</div>
-<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A;padding:40px 40px 20px;display:block">Square posts · 1:1 · 4</span>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:#262626;border-top:1px solid #262626;border-bottom:1px solid #262626">
-<sc-for list="{{ square }}" as="a" hint-placeholder-count="4"><img src="{{ a }}" alt="" style="width:100%;aspect-ratio:1;object-fit:cover;background:#050505"></img></sc-for>
-</div>
-<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A;padding:40px 40px 20px;display:block">Type only · 4:5 · 5</span>
-<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1px;background:#262626;border-top:1px solid #262626;border-bottom:1px solid #262626">
-<sc-for list="{{ typeOnly }}" as="a" hint-placeholder-count="5"><img src="{{ a }}" alt="" style="width:100%;aspect-ratio:4/5;object-fit:cover;background:#050505"></img></sc-for>
-</div>
 <span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A;padding:48px 40px 20px;display:block;text-align:center">Feed frames · 4K widescreen · 7</span>
 <div style="display:flex;flex-direction:column;gap:1px;background:#262626;border-top:1px solid #262626;border-bottom:1px solid #262626">
 <sc-for list="{{ feedWide }}" as="a" hint-placeholder-count="7"><div style="position:relative;background:#050505;overflow:hidden;aspect-ratio:16/9;">
