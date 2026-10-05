@@ -1,0 +1,21 @@
+# The Real Miami Dentists
+
+> The Real Miami Dentists is a cosmetic dentistry education brand powered by 5 Star Smiles, a dental practice at 315 Alhambra Circle, Coral Gables, FL 33134. It explains what excellent cosmetic dentistry looks like and helps people see the difference between a white smile and a beautifully designed one.
+
+- Practice: 5 Star Smiles
+- Address: 315 Alhambra Circle, Coral Gables, FL 33134
+- Phone: (305) 930-2400
+- Email: info@iwanta5starsmile.com
+- Hours: Monday to Friday, 8 AM to 5 PM
+- Instagram and TikTok: @therealmiamidentists
+- Treatments shown on the site: porcelain veneers (two visits), same-day resin veneers, 1-year warranty on smile designs
+
+## Pages
+
+- [Home](https://therealmiamidentists.com/): The truth about teeth. Overview of the brand.
+- [The Brand](https://therealmiamidentists.com/brand): About The Real Miami Dentists and 5 Star Smiles.
+- [Editorial](https://therealmiamidentists.com/editorial): The Real Review, Ask a Miami Dentist, Fake or Flawless? and Miami Smile Files series.
+- [Reviews](https://therealmiamidentists.com/proof): Before and after results and patient testimonials.
+- [After Photos](https://therealmiamidentists.com/after): Real patients of 5 Star Smiles after treatment.
+- [Live Gallery](https://therealmiamidentists.com/live): Real sessions inside the 5 Star Smiles studio.
+- [Follow](https://therealmiamidentists.com/follow): Social channels.
