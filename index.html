@@ -310,7 +310,7 @@
 <span style="font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:#C9CCCE">The brand promise</span>
 <span style="font-weight:600;font-size:clamp(40px,6vw,96px);line-height:.96;letter-spacing:-.03em;text-transform:uppercase;text-wrap:balance">We tell the truth about teeth<span style="color:#C9CCCE">.</span></span>
 <p style="font-size:17px;line-height:1.6;color:#F4F2EE;max-width:560px;text-wrap:pretty">We help people recognize the difference between a white smile and a beautifully designed smile. Rebrand your smile.</p>
-<span onClick="{{ goProof }}" style="cursor:pointer;border:1px solid #F4F2EE;color:#F4F2EE;font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;padding:15px 28px" style-hover="background:#F4F2EE;color:#050505">See the proof</span>
+<span onClick="{{ goProof }}" style="cursor:pointer;border:1px solid #F4F2EE;color:#F4F2EE;font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;padding:15px 28px" style-hover="background:#F4F2EE;color:#050505">See the reviews</span>
 </div>
 </div>
 </div>
@@ -446,60 +446,14 @@
 </div></sc-for>
 </div>
 <div style="padding:64px 40px;display:flex;flex-direction:column;gap:16px;align-items:flex-start">
-<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A">Highlight covers &amp; link in bio</span>
+<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A">Link in bio</span>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:#262626;border:1px solid #262626;width:100%">
-<img src="img/brand-assets-export-05-highlight-covers-all.jpg" alt="" style="width:100%;object-fit:contain;background:#050505;max-height:420px"></img>
 <img src="img/brand-assets-export-10-link-in-bio-01.jpg" alt="" style="width:100%;object-fit:contain;background:#050505;max-height:420px"></img>
 </div>
 </div>
 </div>
 </sc-if>
 
-<!-- ═══ 05 STORIES ═══ -->
-<sc-if value="{{ isStories }}" hint-placeholder-val="{{ false }}">
-<div data-screen-label="05 Stories">
-<div style="padding:96px 40px 64px;display:flex;flex-direction:column;gap:24px;border-bottom:1px solid #262626">
-<span style="font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A">05 · Stories</span>
-<span style="font-weight:600;font-size:clamp(48px,8vw,128px);line-height:.92;letter-spacing:-.03em;text-transform:uppercase">Daily<span style="color:#C9CCCE">.</span></span>
-<p style="font-size:18px;line-height:1.55;color:#B8B6B1;max-width:760px;text-wrap:pretty">Answer questions. Run polls. Reshare results. Introduce personalities. Direct qualified viewers toward consultations.</p>
-</div>
-<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A;padding:48px 40px 20px;display:block;text-align:center">Rollout stories · 20 · GPT Image 2.5</span>
-<div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:#262626;border:1px solid #262626;width:calc(100% - 80px);max-width:1400px;margin:0 auto">
-<sc-for list="{{ rollout }}" as="r" hint-placeholder-count="20">
-<div style="position:relative;width:100%;aspect-ratio:9/16;overflow:hidden;background:#050505;container-type:inline-size">
-<img src="{{ r.img }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:{{ r.pos }};filter:grayscale(1) contrast(1.08)"></img>
-<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,5,.45) 0%,rgba(5,5,5,0) 28%,rgba(5,5,5,0) 55%,rgba(5,5,5,.92) 100%)"></div>
-<div style="position:absolute;top:4.8cqw;left:0;right:0;display:flex;justify-content:center"><div style="width:20cqw;height:20cqw;flex:none"><div style="transform:scale(calc(20cqw / 340px));transform-origin:top left"><div style="width:340px;height:340px;border-radius:999px;background:transparent;border:2.5px solid #FFFFFF;display:flex;flex-direction:column;align-items:center;justify-content:center;box-sizing:border-box;padding-top:2px;overflow:hidden"><div style="display:flex;align-items:center;gap:14px;width:100%"><div style="flex:1;height:1.3px;background:#FFFFFF"></div><span style="font-weight:500;text-transform:uppercase;display:inline-block;transform:scaleX(.78);white-space:nowrap;color:#FFFFFF;font-size:30px;letter-spacing:.06em;line-height:1;flex:none;margin:0 -16px">THE REAL</span><div style="flex:1;height:1.3px;background:#FFFFFF"></div></div><span style="font-weight:500;text-transform:uppercase;display:inline-block;white-space:nowrap;color:#FFFFFF;font-size:97px;letter-spacing:-.015em;line-height:.82;margin-top:14px;transform:scaleX(.85)">MIAMI</span><span style="font-weight:500;text-transform:uppercase;display:inline-block;white-space:nowrap;color:#FFFFFF;font-size:64px;letter-spacing:-.005em;line-height:.82;margin-top:14px;transform:scaleX(.85)">DENTISTS</span><div style="width:248px;height:5px;background:#FFFFFF;margin-top:20px"></div></div></div></div></div>
-<div style="position:absolute;left:7cqw;right:7cqw;bottom:6.5cqw;display:flex;flex-direction:column;gap:5cqw;align-items:flex-start">
-<span style="font-size:2.7cqw;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#C9CCCE">{{ r.kicker }}</span>
-<span style="font-weight:600;font-size:{{ r.size }};line-height:1.04;letter-spacing:-.02em;text-transform:uppercase;color:#F4F2EE;text-wrap:pretty">{{ r.head }}<span style="color:#C9CCCE">{{ r.punct }}</span></span>
-<span style="border:1px solid #F4F2EE;color:#F4F2EE;font-size:2.7cqw;font-weight:600;letter-spacing:.28em;text-transform:uppercase;padding:3cqw 5.4cqw">Follow</span>
-<div style="display:flex;flex-direction:column;gap:1.5cqw">
-<span style="font-size:3.8cqw;letter-spacing:.18em;text-transform:uppercase;color:#8A8A8A">@therealmiamidentists</span>
-<span style="font-size:3.8cqw;letter-spacing:.18em;color:#8A8A8A">(305) 930-2400</span>
-</div>
-</div>
-</div>
-</sc-for>
-</div>
-<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A;padding:48px 40px 20px;display:block;text-align:center">Story ads · 3</span>
-<div style="display:flex;justify-content:center;gap:1px;width:calc(100% - 80px);max-width:1400px;margin:0 auto">
-<sc-for list="{{ storyAds }}" as="a" hint-placeholder-count="3"><img src="{{ a }}" alt="" style="width:calc((100% - 4px) / 5);flex:none;aspect-ratio:9/16;object-fit:cover;background:#050505;border:1px solid #262626;box-sizing:border-box"></img></sc-for>
-</div>
-<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A;padding:48px 40px 20px;display:block;text-align:center">Feed posts as stories · 10</span>
-<div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:#262626;border:1px solid #262626;width:calc(100% - 80px);max-width:1400px;margin:0 auto">
-<sc-for list="{{ storyFeed }}" as="a" hint-placeholder-count="10"><img src="{{ a }}" alt="" style="width:100%;aspect-ratio:9/16;object-fit:cover;background:#050505"></img></sc-for>
-</div>
-<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A;padding:48px 40px 20px;display:block;text-align:center">Type stories · 4</span>
-<div style="display:flex;justify-content:center;gap:1px;width:calc(100% - 80px);max-width:1400px;margin:0 auto">
-<sc-for list="{{ storyType }}" as="a" hint-placeholder-count="4"><img src="{{ a }}" alt="" style="width:calc((100% - 4px) / 5);flex:none;aspect-ratio:9/16;object-fit:cover;background:#050505;border:1px solid #262626;box-sizing:border-box"></img></sc-for>
-</div>
-<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A;padding:48px 40px 20px;display:block;text-align:center">Follow stories · 34</span>
-<div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;background:#262626;border:1px solid #262626;width:calc(100% - 80px);max-width:1400px;margin:0 auto">
-<sc-for list="{{ storyFollow }}" as="a" hint-placeholder-count="12"><img src="{{ a }}" alt="" style="width:100%;aspect-ratio:9/16;object-fit:cover;background:#050505"></img></sc-for>
-</div>
-</div>
-</sc-if>
 
 <!-- ═══ 06 EDITORIAL ═══ -->
 <sc-if value="{{ isEditorial }}" hint-placeholder-val="{{ false }}">
@@ -540,42 +494,12 @@
 </div>
 </sc-if>
 
-<!-- ═══ 07 CAMPAIGN ═══ -->
-<sc-if value="{{ isCampaign }}" hint-placeholder-val="{{ false }}">
-<div data-screen-label="07 Campaign">
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;background:#262626;border-bottom:1px solid #262626">
-<sc-for list="{{ weeks }}" as="w" hint-placeholder-count="4">
-<div style="background:#050505;padding:48px 32px;display:flex;flex-direction:column;gap:18px">
-<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#C9CCCE">{{ w.week }}</span>
-<span style="font-weight:600;font-size:26px;line-height:1.05;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance">{{ w.title }}</span>
-<p style="font-size:13px;line-height:1.6;color:#B8B6B1">{{ w.goal }}</p>
-<div style="border-top:1px solid #262626;padding-top:14px;display:flex;flex-direction:column;gap:6px"><sc-for list="{{ w.items }}" as="i" hint-placeholder-count="6"><span style="font-size:13px;line-height:1.45">{{ i }}</span></sc-for></div>
-<img src="{{ w.img }}" alt="" style="width:100%;aspect-ratio:4/5;object-fit:cover;background:#050505;margin-top:auto"></img>
-</div>
-</sc-for>
-</div>
-<div style="padding:96px 40px;display:flex;flex-direction:column;gap:32px">
-<span style="font-weight:600;font-size:clamp(32px,4vw,56px);line-height:1;letter-spacing:-.03em;text-transform:uppercase">Weekly rhythm<span style="color:#C9CCCE">.</span></span>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:#262626;border:1px solid #262626">
-<sc-for list="{{ rhythm }}" as="d" hint-placeholder-count="6">
-<div style="background:#050505;padding:28px 24px;display:flex;flex-direction:column;gap:14px;min-height:150px;min-width:0"><span style="font-size:8px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#C9CCCE">{{ d.day }}</span><span style="font-weight:600;font-size:16px;line-height:1.15;letter-spacing:-.02em;text-transform:uppercase;text-wrap:balance">{{ d.what }}</span><span style="font-size:12px;line-height:1.5;color:#8A8A8A;margin-top:auto">{{ d.why }}</span></div>
-</sc-for>
-</div>
-</div>
-<div style="border-top:1px solid #262626;padding:96px 40px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:48px">
-<div style="display:flex;flex-direction:column;gap:16px"><span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A">Reels</span><span style="font-size:22px;line-height:1.2">15 to 35 seconds.</span><p style="font-size:13px;line-height:1.6;color:#B8B6B1">Earn attention. Express a strong opinion. Show visual evidence. Introduce experts.</p></div>
-<div style="display:flex;flex-direction:column;gap:16px"><span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A">Carousels</span><span style="font-size:22px;line-height:1.2">Six to nine frames.</span><p style="font-size:13px;line-height:1.6;color:#B8B6B1">Saveable education. Comparisons. Smile-design breakdowns.</p></div>
-<div style="display:flex;flex-direction:column;gap:16px"><span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A">Stories</span><span style="font-size:22px;line-height:1.2">Daily.</span><p style="font-size:13px;line-height:1.6;color:#B8B6B1">Questions, polls, results, personalities, behind the scenes.</p></div>
-<div style="display:flex;flex-direction:column;gap:16px"><span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A">Collaborations</span><span style="font-size:22px;line-height:1.2">Twice weekly.</span><p style="font-size:13px;line-height:1.6;color:#B8B6B1">5 Star Smiles, Miami creators, fashion and beauty professionals, previous patients.</p></div>
-</div>
-</div>
-</sc-if>
 
-<!-- ═══ 08 PROOF ═══ -->
+<!-- ═══ 08 REVIEWS ═══ -->
 <sc-if value="{{ isProof }}" hint-placeholder-val="{{ false }}">
-<div data-screen-label="08 Proof" style="display:flex;flex-direction:column;align-items:center;gap:48px;padding-bottom:96px">
+<div data-screen-label="08 Reviews" style="display:flex;flex-direction:column;align-items:center;gap:48px;padding-bottom:96px">
 <div style="padding:96px 40px 64px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;border-bottom:1px solid #262626;width:100%;box-sizing:border-box">
-<span style="font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A">08 · Proof</span>
+<span style="font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A">08 · Reviews</span>
 <span style="font-weight:600;font-size:clamp(48px,8vw,128px);line-height:.92;letter-spacing:-.03em;text-transform:uppercase;text-wrap:balance;max-width:1200px">Good teeth speak for themselves<span style="color:#C9CCCE">.</span></span>
 <p style="font-size:18px;line-height:1.55;color:#B8B6B1;max-width:760px;text-wrap:pretty">Transformations, testimonials, the service ads and the Full VIP Package — the 5 Star Smiles side of the ecosystem the page hands off to.</p>
 </div>
@@ -713,7 +637,7 @@
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = { page: 'home' };
-  pages = [['home','Home'],['brand','The Brand'],['identity','Identity'],['feed','The Feed'],['stories','Stories'],['editorial','Editorial'],['campaign','Campaign'],['proof','Proof'],['follow','Follow'],['live','Live Gallery'],['after','After Photos'],['video','AI Video']];
+  pages = [['home','Home'],['brand','The Brand'],['identity','Identity'],['feed','The Feed'],['editorial','Editorial'],['proof','Reviews'],['follow','Follow'],['live','Live Gallery'],['after','After Photos'],['video','AI Video']];
   componentDidMount() {
     const h = (location.hash || '').replace('#', '');
     if (this.pages.some(p => p[0] === h)) this.setState({ page: h });
