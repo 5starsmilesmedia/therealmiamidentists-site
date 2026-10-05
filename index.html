@@ -386,7 +386,6 @@
 <!-- ═══ 04 FEED ═══ -->
 <sc-if value="{{ isFeed }}" hint-placeholder-val="{{ false }}">
 <div data-screen-label="04 The Feed">
-<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A;padding:48px 40px 20px;display:block;text-align:center">Feed frames · 4K widescreen · 7</span>
 <div style="display:flex;flex-direction:column;gap:1px;background:#262626;border-top:1px solid #262626;border-bottom:1px solid #262626">
 <sc-for list="{{ feedWide }}" as="a" hint-placeholder-count="7"><div style="position:relative;background:#050505;overflow:hidden;aspect-ratio:16/9;">
 <img src="{{ a.img }}" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#050505"></img>
@@ -404,12 +403,6 @@
 <div style="display:flex;justify-content:space-between;gap:24px"><sc-for list="{{ a.bot2 }}" as="w" hint-placeholder-count="4"><span>{{ w }}</span></sc-for></div>
 </div>
 </div></sc-for>
-</div>
-<div style="padding:64px 40px;display:flex;flex-direction:column;gap:16px;align-items:flex-start">
-<span style="font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#8A8A8A">Link in bio</span>
-<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:#262626;border:1px solid #262626;width:100%">
-<img src="img/brand-assets-export-10-link-in-bio-01.jpg" alt="" style="width:100%;object-fit:contain;background:#050505;max-height:420px"></img>
-</div>
 </div>
 </div>
 </sc-if>
