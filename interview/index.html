@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Real Miami Dentists – Street Interview</title>
+<meta name="theme-color" content="#050505">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:opsz,wght@6..96,400..900&display=swap" rel="stylesheet">
+<style>
+  /* Design tokens from therealmiamidentists.com (5 Star Smiles design system) */
+  :root{
+    --ink-0:#050505; --ink-1:#0D0D0D; --ink-2:#161616; --ink-3:#222222;
+    --paper-0:#F4F2EE; --paper-1:#E9E6E0;
+    --grey-1:#D6D3CD; --grey-2:#8A8A8A; --grey-3:#565656;
+    --chrome-0:#C9CCCE; --chrome-1:#9FA4A7;
+    --line:#262626; --err:#e5484d;
+    --font-display:'Bodoni Moda',Georgia,serif;
+    --font-sans:'Archivo',Helvetica,Arial,sans-serif;
+    --ease-lux:cubic-bezier(.19,1,.22,1);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:var(--font-sans);background:var(--ink-0);color:var(--grey-1);line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
+  ::selection{background:var(--chrome-0);color:var(--ink-0)}
+
+  /* top bar + seal */
+  .bar{display:flex;align-items:center;gap:12px;padding:14px 20px;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;background:rgba(5,5,5,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  .seal{width:44px;height:44px;border-radius:50%;border:1px solid #fff;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-family:var(--font-sans);font-weight:500;text-transform:uppercase;line-height:.82;flex:none}
+  .seal .t{display:flex;align-items:center;gap:2px;width:100%;font-size:3.6px;letter-spacing:.06em}
+  .seal .t::before,.seal .t::after{content:"";flex:1;height:.4px;background:#fff}
+  .seal .m{font-size:12.4px;transform:scaleX(.85);margin-top:2px;letter-spacing:-.015em}
+  .seal .d{font-size:8.2px;transform:scaleX(.85);margin-top:2px}
+  .seal .u{width:32px;height:.7px;background:#fff;margin-top:3px}
+  .wordmark{display:flex;flex-direction:column;gap:2px;text-transform:uppercase}
+  .wordmark small{font-size:8px;font-weight:600;letter-spacing:.42em;color:var(--chrome-0)}
+  .wordmark b{font-weight:600;font-size:15px;line-height:1;letter-spacing:-.02em;color:var(--paper-0)}
+
+  /* hero */
+  .hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;padding:0 20px 40px;overflow:hidden;color:var(--paper-0)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:grayscale(1) contrast(1.05)}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,5,5,.15) 0%,rgba(5,5,5,0) 30%,rgba(5,5,5,.7) 65%,rgba(5,5,5,1) 100%)}
+  .hero-inner{position:relative;z-index:1;max-width:520px;margin:0 auto;width:100%}
+  .eyebrow{font-family:var(--font-display);font-size:10px;letter-spacing:.42em;text-transform:uppercase;color:var(--chrome-0);margin:0 0 14px}
+  .hero h1{font-family:var(--font-display);font-weight:600;text-transform:uppercase;font-size:clamp(44px,13vw,72px);line-height:.95;letter-spacing:-.03em;margin:0 0 18px}
+  .hero p{margin:0;max-width:400px;font-size:15px;color:var(--grey-1)}
+  .scroll{display:inline-block;margin-top:24px;font-family:var(--font-display);font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--paper-0);text-decoration:none;border:1px solid var(--paper-0);padding:15px 28px;transition:background .4s var(--ease-lux),color .4s var(--ease-lux)}
+  .scroll:active{background:var(--paper-0);color:var(--ink-0)}
+
+  main{max-width:520px;margin:0 auto;padding:8px 20px 64px}
+  .card{border-top:1px solid var(--line);padding:40px 0 8px}
+  .step{display:flex;align-items:baseline;gap:14px;margin:0 0 20px}
+  .step b{font-family:var(--font-display);font-weight:400;font-size:12px;letter-spacing:.28em;color:var(--chrome-0)}
+  .step h2{font-family:var(--font-display);font-weight:600;font-size:30px;line-height:1.05;letter-spacing:-.02em;text-transform:uppercase;color:var(--paper-0);margin:0}
+  label{display:block;font-size:10px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--grey-2);margin:22px 0 8px}
+  label span{letter-spacing:.1em;text-transform:none;font-weight:400}
+  .check span,.agree span{letter-spacing:0}
+  input[type=text],input[type=email]{width:100%;font:inherit;font-size:17px;padding:12px 0;border:0;border-bottom:1px solid var(--grey-3);border-radius:0;background:transparent;color:var(--paper-0);outline:none;transition:border-color .4s var(--ease-lux)}
+  input::placeholder{color:var(--grey-3)}
+  input:focus{border-bottom-color:var(--paper-0)}
+  input.bad{border-bottom-color:var(--err)}
+  .err{color:var(--err);font-size:12.5px;margin-top:8px;display:none}
+  .err.show{display:block}
+
+  /* Instagram field */
+  .ig-wrap{display:flex;align-items:center;border-bottom:1px solid var(--grey-3);transition:border-color .4s var(--ease-lux)}
+  .ig-wrap:focus-within{border-bottom-color:var(--paper-0)}
+  .ig-wrap.bad{border-bottom-color:var(--err)}
+  .ig-at{font-family:var(--font-display);font-size:22px;color:var(--chrome-0);padding-right:4px}
+  .ig-wrap input{border:0!important}
+  .ig-card{display:none;margin-top:14px;align-items:center;gap:14px;padding:14px;background:var(--ink-1);border:1px solid var(--line)}
+  .ig-card.show{display:flex}
+  .ig-avatar{width:46px;height:46px;border-radius:50%;flex:none;display:grid;place-items:center;font-family:var(--font-display);font-size:20px;color:var(--ink-0);background:linear-gradient(135deg,#fff,var(--chrome-0) 45%,var(--chrome-1) 70%,#e9eaeb)}
+  .ig-meta{flex:1;min-width:0}
+  .ig-meta strong{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--paper-0);font-weight:600}
+  .ig-meta span{font-size:12.5px;color:var(--grey-2)}
+  .ig-btn{flex:none;font-family:var(--font-display);font-size:9px;letter-spacing:.28em;text-transform:uppercase;padding:12px 16px;border:1px solid var(--paper-0);color:var(--paper-0);text-decoration:none}
+  .check.ig-confirm{display:none}
+  .check.ig-confirm.show{display:flex}
+  .hint{font-size:12.5px;color:var(--grey-2);margin-top:10px}
+
+  /* checks */
+  .check{display:flex;gap:14px;align-items:center;padding:14px 0;margin:6px 0 0;cursor:pointer;font-size:14px;letter-spacing:0;text-transform:none;font-weight:400;color:var(--grey-1)}
+  input[type=checkbox]{appearance:none;-webkit-appearance:none;width:22px;height:22px;flex:none;margin:0;border:1px solid var(--grey-2);background:transparent;display:grid;place-items:center;cursor:pointer;border-radius:0}
+  input[type=checkbox]:checked{background:var(--paper-0);border-color:var(--paper-0)}
+  input[type=checkbox]:checked::after{content:"";width:6px;height:11px;border:solid var(--ink-0);border-width:0 2px 2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+  .seg{display:flex;gap:0;margin-top:4px;border:1px solid var(--grey-3)}
+  .seg label{flex:1;margin:0;text-align:center;padding:15px 8px;font-family:var(--font-display);font-size:10px;letter-spacing:.28em;color:var(--grey-1);cursor:pointer}
+  .seg label+label{border-left:1px solid var(--grey-3)}
+  .seg input{display:none}
+  .seg label:has(input:checked){background:var(--paper-0);color:var(--ink-0)}
+
+  /* release document */
+  .intro{font-size:14px;color:var(--grey-2);margin:-6px 0 20px}
+  .doc{background:var(--ink-1);border:1px solid var(--line);padding:24px 18px 8px}
+  .doc h3{font-family:var(--font-display);font-weight:600;font-size:22px;line-height:1.1;letter-spacing:-.01em;color:var(--paper-0);margin:0}
+  .doc-sub{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--chrome-0);margin:10px 0 8px}
+  .clause{padding:20px 0;border-top:1px solid var(--line)}
+  .clause h4{font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--paper-0);margin:0 0 8px}
+  .clause p{font-size:14px;color:var(--grey-1);margin:0 0 14px}
+  .clause strong{color:var(--paper-0);font-weight:600}
+  .agree{display:inline-flex;align-items:center;gap:12px;margin:0;padding:11px 18px 11px 12px;border:1px solid var(--grey-3);font-family:var(--font-display);font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--paper-0);cursor:pointer;transition:background .4s var(--ease-lux),border-color .4s var(--ease-lux)}
+  .agree input{width:18px;height:18px}
+  .agree:has(input:checked){border-color:var(--paper-0);background:var(--paper-0);color:var(--ink-0)}
+  .agree:has(input:checked) input{border-color:var(--ink-0);background:var(--ink-0)}
+  .agree:has(input:checked) input::after{border-color:var(--paper-0)}
+  .clause.missing .agree{border-color:var(--err)}
+  .progress{display:flex;align-items:center;gap:14px;margin-top:20px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--grey-2);font-weight:600}
+  .bar-track{flex:1;height:1px;background:var(--grey-3);position:relative}
+  .bar-track i{position:absolute;left:0;top:-1px;display:block;height:3px;width:0;background:var(--paper-0);transition:width .4s var(--ease-lux)}
+  .attest{font-size:13.5px;color:var(--grey-1);border-left:1px solid var(--chrome-0);padding:2px 0 2px 14px;margin:26px 0 0}
+
+  /* signature — paper on black */
+  .sig-box{position:relative;background:var(--paper-0);touch-action:none;transition:opacity .4s var(--ease-lux)}
+  .sig-box canvas{display:block;width:100%;height:170px}
+  .sig-ph{position:absolute;inset:0;display:grid;place-items:center;color:var(--grey-2);font-family:var(--font-display);font-size:10px;letter-spacing:.28em;text-transform:uppercase;pointer-events:none;text-align:center;padding:0 20px}
+  .sig-line{position:absolute;left:20px;right:20px;bottom:38px;border-bottom:1px solid var(--grey-1);pointer-events:none}
+  .sig-line::before{content:"×";position:absolute;left:0;bottom:4px;font-family:var(--font-display);color:var(--grey-3);font-size:16px}
+  .sig-box.locked{opacity:.35}
+  .sig-row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:12.5px;color:var(--grey-2)}
+  .link{background:none;border:0;color:var(--paper-0);font-family:var(--font-display);font-size:9px;letter-spacing:.28em;text-transform:uppercase;cursor:pointer;padding:6px 0;text-decoration:underline;text-underline-offset:4px}
+  .guardian{display:none}
+  .guardian.show{display:block}
+
+  .submit{width:100%;margin-top:36px;font-family:var(--font-display);font-size:11px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;padding:20px;border:1px solid var(--paper-0);border-radius:0;background:var(--paper-0);color:var(--ink-0);cursor:pointer;transition:background .4s var(--ease-lux),color .4s var(--ease-lux)}
+  .submit:active{background:transparent;color:var(--paper-0)}
+  .submit:disabled{opacity:.5}
+  .fine{text-align:center;font-size:12px;color:var(--grey-2);margin-top:16px}
+
+  .thanks{display:none;text-align:center;padding:56px 0 24px;border-top:1px solid var(--line)}
+  .thanks.show{display:block}
+  .thanks h2{font-family:var(--font-display);font-weight:600;text-transform:uppercase;font-size:44px;line-height:.98;letter-spacing:-.02em;color:var(--paper-0);margin:12px 0 16px}
+  .thanks p{color:var(--grey-1);max-width:340px;margin:0 auto}
+  .follow{display:inline-block;margin-top:28px;font-family:var(--font-display);font-size:10px;letter-spacing:.28em;text-transform:uppercase;padding:16px 28px;border:1px solid var(--paper-0);color:var(--paper-0);text-decoration:none}
+  .test-note{margin:20px auto 0!important;font-size:12px;color:var(--chrome-0)!important;border:1px dashed var(--grey-3);padding:10px 12px;max-width:340px}
+  footer{border-top:1px solid var(--line);padding:28px 20px 40px;text-align:center;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--grey-2)}
+  footer a{color:var(--grey-1);text-decoration:none}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="seal" aria-hidden="true"><span class="t">The Real</span><span class="m">Miami</span><span class="d">Dentists</span><span class="u"></span></div>
+  <div class="wordmark"><small>The real</small><b>Miami Dentists</b></div>
+</div>
+
+<header class="hero">
+  <img src="/img/assets-frames-15-follow-editorial-your-images-04.jpg" alt="Smiling woman in sunglasses beside a Doberman" fetchpriority="high">
+  <div class="hero-inner">
+    <p class="eyebrow">Street interview</p>
+    <h1>You’re on<br>the record.</h1>
+    <p>Thanks for talking teeth with us. Leave your details so we can tag you when your interview goes live, then read and sign the release below.</p>
+    <a class="scroll" href="#f">Begin ↓</a>
+  </div>
+</header>
+
+<main>
+<form id="f" novalidate>
+
+  <!-- 1. Contact -->
+  <section class="card">
+    <div class="step"><b>01</b><h2>Your info</h2></div>
+    <label for="name">Full name</label>
+    <input id="name" name="name" type="text" autocomplete="name" placeholder="Maria Lopez" required>
+    <div class="err" id="name-err">Please enter your name.</div>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required>
+    <div class="err" id="email-err">Please enter a valid email.</div>
+  </section>
+
+  <!-- 2. Instagram -->
+  <section class="card">
+    <div class="step"><b>02</b><h2>Your Instagram</h2></div>
+    <label for="ig">Instagram handle <span style="font-weight:400">(so we can tag you)</span></label>
+    <div class="ig-wrap" id="ig-wrap">
+      <span class="ig-at">@</span>
+      <input id="ig" name="instagram" type="text" placeholder="yourname" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="31">
+    </div>
+    <div class="err" id="ig-err">Handles use letters, numbers, periods and underscores (max 30).</div>
+
+    <div class="ig-card" id="ig-card">
+      <div class="ig-avatar" id="ig-avatar">?</div>
+      <div class="ig-meta">
+        <strong id="ig-handle">@</strong>
+        <span>Tap view to make sure it’s you</span>
+      </div>
+      <a class="ig-btn" id="ig-open" href="#" target="_blank" rel="noopener">View</a>
+    </div>
+    <label class="check ig-confirm" id="ig-confirm-row">
+      <input type="checkbox" id="ig-confirm"> Yes, that’s my profile
+    </label>
+    <div class="hint">No Instagram? Just leave this blank.</div>
+
+    <label class="check">
+      <input type="checkbox" id="tag" name="tag_me" checked>
+      <span>Tag me when the video is posted</span>
+    </label>
+  </section>
+
+  <!-- 3. Release (read + check each section) -->
+  <section class="card">
+    <div class="step"><b>03</b><h2>Video &amp; photo release</h2></div>
+    <p class="intro">Please read each section and check the box to agree. You’ll sign at the bottom.</p>
+
+    <div class="doc" id="release-text">
+      <h3>Appearance, Video &amp; Photo Release</h3>
+      <p class="doc-sub">The Real Miami Dentists · <span id="doc-date"></span></p>
+
+      <div class="clause">
+        <h4>1. Permission to record</h4>
+        <p>I give <strong>The Real Miami Dentists</strong> and <strong>5 Star Smiles</strong>, their owners, employees, agents and production partners (“the Practice”) permission to record, film and photograph me during this street interview, including my image, likeness, voice and statements (“the Recordings”).</p>
+        <label class="agree"><input type="checkbox" class="cl" id="c-record"> I agree</label>
+      </div>
+
+      <div class="clause">
+        <h4>2. Video &amp; voice</h4>
+        <p>The Practice may edit, cut, caption and publish video and audio of me on social media (including Instagram, TikTok, Facebook and YouTube), its website, and in advertising and promotional materials, worldwide and without a time limit.</p>
+        <label class="agree"><input type="checkbox" class="cl" id="c-video"> I agree</label>
+      </div>
+
+      <div class="clause">
+        <h4>3. Photos</h4>
+        <p>The same permission applies to still photos and screenshots taken from the Recordings.</p>
+        <label class="agree"><input type="checkbox" class="cl" id="c-photo"> I agree</label>
+      </div>
+
+      <div class="clause">
+        <h4>4. Name &amp; Instagram tag</h4>
+        <p>The Practice may show my first name and tag my Instagram handle (if I gave one) in posts that feature me.</p>
+        <label class="agree"><input type="checkbox" class="cl" id="c-social"> I agree</label>
+      </div>
+
+      <div class="clause">
+        <h4>5. No payment &amp; no approval</h4>
+        <p>I will not be paid or otherwise compensated for this use, and I do not have the right to review or approve the final edited content.</p>
+        <label class="agree"><input type="checkbox" class="cl" id="c-nopay"> I agree</label>
+      </div>
+
+      <div class="clause">
+        <h4>6. Release of claims</h4>
+        <p>I release the Practice from any claims arising from the use of the Recordings, including claims of invasion of privacy, right of publicity or defamation.</p>
+        <label class="agree"><input type="checkbox" class="cl" id="c-release"> I agree</label>
+      </div>
+
+      <div class="clause">
+        <h4>7. Not dental advice</h4>
+        <p>This interview is not a dental consultation. Nothing said during it is medical or dental advice, and no patient–provider relationship is created.</p>
+        <label class="agree"><input type="checkbox" class="cl" id="c-notreat"> I understand</label>
+      </div>
+
+      <div class="clause">
+        <h4>8. Stopping future use</h4>
+        <p>I can ask the Practice to stop future use of the Recordings by contacting it. Content that has already been published or printed may not be removable.</p>
+        <label class="agree"><input type="checkbox" class="cl" id="c-revoke"> I understand</label>
+      </div>
+    </div>
+
+    <div class="progress"><div class="bar-track"><i id="prog-bar"></i></div><span id="prog-txt">0 of 8 agreed</span></div>
+    <div class="err" id="clause-err">Please read and check every section above.</div>
+  </section>
+
+  <!-- 4. Sign -->
+  <section class="card" id="sign-card">
+    <div class="step"><b>04</b><h2>Sign</h2></div>
+
+    <label>Are you 18 or older?</label>
+    <div class="seg">
+      <label><input type="radio" name="adult" value="yes" checked> Yes, 18+</label>
+      <label><input type="radio" name="adult" value="no"> Under 18</label>
+    </div>
+
+    <div class="guardian" id="guardian">
+      <label for="gname">Parent / guardian full name</label>
+      <input id="gname" type="text" autocomplete="off" placeholder="Guardian name">
+      <div class="err" id="gname-err">A parent or guardian must sign for anyone under 18.</div>
+    </div>
+
+    <p class="attest" id="attest">By signing below, I confirm I have read and agree to all sections of this release, and that I am 18 or older.</p>
+
+    <label id="sig-label">Signature</label>
+    <div class="sig-box" id="sig-box">
+      <canvas id="sig"></canvas>
+      <div class="sig-line"></div>
+      <div class="sig-ph" id="sig-ph">Agree to all 8 sections above to sign</div>
+    </div>
+    <div class="sig-row"><span id="sig-name">Printed name: —</span><button type="button" class="link" id="sig-clear">Clear</button></div>
+    <div class="sig-row"><span id="sig-date"></span></div>
+    <div class="err" id="sig-err">Please sign above.</div>
+  </section>
+
+  <button class="submit" id="submit" type="submit">Submit &amp; sign</button>
+  <p class="fine">We’ll only use your email to send you your clip and occasional updates. No spam.</p>
+</form>
+
+<section class="thanks" id="thanks">
+  <p class="eyebrow">Signed · Sealed</p>
+  <h2>The truth<br>about teeth.</h2>
+  <p>You’re all set. Watch your Instagram — we’ll tag you when your interview drops.</p>
+  <p class="test-note" id="test-note" hidden>Test mode: nothing was saved. Connect the Google Sheet to start collecting.</p>
+  <a class="follow" id="follow" href="https://www.instagram.com/" target="_blank" rel="noopener">Follow @therealmiamidentists</a>
+</section>
+</main>
+
+<footer>
+  <a href="https://therealmiamidentists.com" target="_blank" rel="noopener">therealmiamidentists.com</a><br>
+  Powered by 5 Star Smiles · Coral Gables
+</footer>
+
+<script>
+/* ===================== SETTINGS — EDIT THESE ===================== */
+const CONFIG = {
+  // Paste the Web App URL from Google Apps Script (see google-apps-script.gs)
+  ENDPOINT: "PASTE_YOUR_APPS_SCRIPT_URL_HERE",
+  // The practice's Instagram handle (without @) for the "Follow us" button
+  PRACTICE_IG: "therealmiamidentists",
+};
+/* ================================================================= */
+
+const $ = id => document.getElementById(id);
+document.getElementById("follow").href = "https://www.instagram.com/" + CONFIG.PRACTICE_IG + "/";
+
+// Track where the QR was scanned: e.g. ...index.html?src=brickell-maria
+const SOURCE = new URLSearchParams(location.search).get("src") || "";
+
+/* ---------- Instagram handle ---------- */
+const IG_RE = /^(?!.*\.\.)(?!\.)(?!.*\.$)[a-z0-9._]{1,30}$/;
+const ig = $("ig");
+function cleanHandle(v){
+  v = v.trim().replace(/^https?:\/\/(www\.)?instagram\.com\//i,"").replace(/[/?#].*$/,"");
+  return v.replace(/^@+/,"").replace(/\s+/g,"").toLowerCase();
+}
+function updateIG(){
+  const h = cleanHandle(ig.value);
+  if (ig.value !== h) ig.value = h;
+  const ok = !h || IG_RE.test(h);
+  $("ig-wrap").classList.toggle("bad", !ok);
+  $("ig-err").classList.toggle("show", !ok);
+  const show = h && ok;
+  $("ig-card").classList.toggle("show", !!show);
+  $("ig-confirm-row").classList.toggle("show", !!show);
+  if (show){
+    $("ig-handle").textContent = "@" + h;
+    $("ig-avatar").textContent = h.replace(/[^a-z0-9]/,"").charAt(0).toUpperCase() || "@";
+    $("ig-open").href = "https://www.instagram.com/" + encodeURIComponent(h) + "/";
+  }
+  $("ig-confirm").checked = false;
+}
+ig.addEventListener("input", updateIG);
+
+/* ---------- Minor / guardian ---------- */
+document.querySelectorAll('input[name=adult]').forEach(r => r.addEventListener("change", () => {
+  const minor = document.querySelector('input[name=adult]:checked').value === "no";
+  $("guardian").classList.toggle("show", minor);
+  $("sig-label").textContent = minor ? "Parent / guardian signature" : "Signature";
+  $("attest").textContent = minor
+    ? "By signing below, I confirm I am the parent or legal guardian of the person interviewed, and that I have read and agree to all sections of this release on their behalf."
+    : "By signing below, I confirm I have read and agree to all sections of this release, and that I am 18 or older.";
+  updateName();
+}));
+
+/* ---------- Signature pad ---------- */
+const canvas = $("sig"), ctx = canvas.getContext("2d");
+let drawing = false, hasInk = false, last = null;
+function sizeCanvas(){
+  const r = canvas.getBoundingClientRect(), dpr = window.devicePixelRatio || 1;
+  const img = hasInk ? canvas.toDataURL() : null;
+  canvas.width = r.width * dpr; canvas.height = r.height * dpr;
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  ctx.lineWidth = 2.4; ctx.lineCap = ctx.lineJoin = "round"; ctx.strokeStyle = "#050505";
+  if (img){ const i = new Image(); i.onload = () => ctx.drawImage(i,0,0,r.width,r.height); i.src = img; }
+}
+function pt(e){ const r = canvas.getBoundingClientRect(); return {x:e.clientX - r.left, y:e.clientY - r.top}; }
+canvas.addEventListener("pointerdown", e => { if (locked) { $("clause-err").classList.add("show"); document.querySelector(".clause .cl:not(:checked)")?.closest(".clause").scrollIntoView({behavior:"smooth",block:"center"}); return; } drawing = true; last = pt(e); canvas.setPointerCapture(e.pointerId); e.preventDefault(); });
+canvas.addEventListener("pointermove", e => {
+  if (!drawing) return;
+  const p = pt(e);
+  ctx.beginPath(); ctx.moveTo(last.x,last.y); ctx.lineTo(p.x,p.y); ctx.stroke();
+  last = p;
+  if (!hasInk){ hasInk = true; $("sig-ph").style.display = "none"; $("sig-err").classList.remove("show"); }
+});
+["pointerup","pointercancel","pointerleave"].forEach(t => canvas.addEventListener(t, () => drawing = false));
+$("sig-clear").onclick = () => { ctx.clearRect(0,0,canvas.width,canvas.height); hasInk = false; $("sig-ph").style.display = ""; };
+
+/* ---------- Clause checkboxes → progress + unlock signature ---------- */
+let locked = true;
+const clauses = [...document.querySelectorAll(".cl")];
+function updateClauses(){
+  const n = clauses.filter(c => c.checked).length;
+  $("prog-bar").style.width = (n / clauses.length * 100) + "%";
+  $("prog-txt").textContent = n + " of " + clauses.length + " agreed";
+  locked = n < clauses.length;
+  $("sig-box").classList.toggle("locked", locked);
+  if (!hasInk) $("sig-ph").textContent = locked ? "Agree to all " + clauses.length + " sections above to sign" : "Sign here with your finger";
+  if (!locked) $("clause-err").classList.remove("show");
+  clauses.forEach(c => c.checked && c.closest(".clause").classList.remove("missing"));
+}
+clauses.forEach(c => c.addEventListener("change", updateClauses));
+updateClauses();
+
+function updateName(){
+  const minor = document.querySelector('input[name=adult]:checked').value === "no";
+  const n = minor ? $("gname").value.trim() : $("name").value.trim();
+  $("sig-name").textContent = "Printed name: " + (n || "—");
+}
+$("name").addEventListener("input", updateName);
+$("gname").addEventListener("input", updateName);
+$("doc-date").textContent = new Date().toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"});
+window.addEventListener("resize", sizeCanvas);
+sizeCanvas();
+$("sig-date").textContent = "Date: " + new Date().toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"});
+
+/* ---------- Validate + submit ---------- */
+function flag(inputId, errId, bad){
+  if (inputId) $(inputId).classList.toggle("bad", bad);
+  $(errId).classList.toggle("show", bad);
+  return bad;
+}
+$("f").addEventListener("submit", async e => {
+  e.preventDefault();
+  const name = $("name").value.trim(), email = $("email").value.trim();
+  const handle = cleanHandle(ig.value);
+  const minor = document.querySelector('input[name=adult]:checked').value === "no";
+  const gname = $("gname").value.trim();
+
+  let bad = false, first = null;
+  const check = (cond, inputId, errId) => { if (flag(inputId, errId, cond)){ bad = true; first = first || $(errId); } };
+  check(!name, "name", "name-err");
+  check(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email), "email", "email-err");
+  check(handle && !IG_RE.test(handle), null, "ig-err");
+  check(minor && !gname, "gname", "gname-err");
+  check(!hasInk, null, "sig-err");
+  const missing = [...document.querySelectorAll(".cl")].filter(c => !c.checked);
+  document.querySelectorAll(".clause").forEach(cl => cl.classList.toggle("missing", !cl.querySelector(".cl").checked));
+  if (missing.length){ bad = true; $("clause-err").classList.add("show"); first = first || missing[0].closest(".clause"); }
+  if (bad){ first.scrollIntoView({behavior:"smooth", block:"center"}); return; }
+
+  const btn = $("submit");
+  btn.disabled = true; btn.textContent = "Submitting…";
+
+  const payload = {
+    submitted_at: new Date().toISOString(),
+    name, email,
+    instagram: handle ? "@" + handle : "",
+    instagram_confirmed: $("ig-confirm").checked,
+    tag_me: $("tag").checked,
+    consent_video: $("c-video").checked,
+    consent_photo: $("c-photo").checked,
+    consent_social_name: $("c-social").checked,
+    clauses_agreed: [...document.querySelectorAll(".cl")].filter(c => c.checked).map(c => c.id).join(", "),
+    is_minor: minor,
+    guardian_name: minor ? gname : "",
+    signature_png: canvas.toDataURL("image/png"),
+    release_text: $("release-text").innerText,
+    source: SOURCE,
+    user_agent: navigator.userAgent,
+  };
+
+  // Test mode: no Google Sheet connected yet, so show the thank-you screen without saving
+  if (!CONFIG.ENDPOINT.startsWith("https://")) {
+    console.log("TEST MODE, not saved:", payload);
+    $("test-note").hidden = false;
+    $("f").style.display = "none";
+    $("thanks").classList.add("show");
+    scrollTo({top:0, behavior:"smooth"});
+    return;
+  }
+
+  try {
+    // text/plain avoids a CORS preflight, which Apps Script doesn't answer
+    await fetch(CONFIG.ENDPOINT, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body: JSON.stringify(payload) });
+    $("f").style.display = "none";
+    $("thanks").classList.add("show");
+    scrollTo({top:0, behavior:"smooth"});
+  } catch (err) {
+    console.error(err);
+    alert("Sorry, that didn’t go through. Please check your connection and try again, or show this screen to the interviewer.");
+    btn.disabled = false; btn.textContent = "Submit & sign";
+  }
+});
+</script>
+</body>
+</html>
