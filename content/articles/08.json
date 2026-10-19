@@ -1,0 +1,443 @@
+[
+  {
+    "slug": "ai-that-reads-your-x-rays",
+    "series": "08",
+    "topic": "AI that reads your X-rays",
+    "title": "AI that reads your X-rays: what it flags, and what it doesn't decide",
+    "dek": "FDA-cleared software can now mark suspected decay and other findings on dental X-rays. It highlights; your dentist still diagnoses.",
+    "body": [
+      {
+        "p": "If your dentist turns the screen toward you and the X-ray has colored boxes on it, you are probably looking at dental AI. The software scans the image and marks areas it thinks deserve a closer look. It is a second set of eyes. It is not the diagnosis."
+      },
+      {
+        "h": "What is actually cleared"
+      },
+      {
+        "p": "This is no longer a lab experiment. A narrative review in the International Dental Journal, published in December 2025, searched FDA databases through July 2025 and counted 29 FDA-cleared AI products for dental imaging from 13 companies. They cover tasks such as detecting decay, measuring bone levels around teeth, charting, and analyzing 3D scans."
+      },
+      {
+        "p": "Two names come up often. The review lists Overjet with nine cleared modules, including decay and calculus detection, and Pearl with seven, including multi-condition detection on bitewing and periapical X-rays, the small films taken inside the mouth."
+      },
+      {
+        "p": "Coverage is widening. On December 18, 2025, Pearl announced FDA 510(k) clearance for its Second Opinion software to flag suspected cavities, periapical radiolucencies (dark areas near root tips that can signal infection) and impacted wisdom teeth on panoramic X-rays, the wide image that wraps around the whole jaw. That is a company announcement. Pearl says the clearance was supported by a standalone performance study and a multi-reader study, and the trade press coverage reported no accuracy figures."
+      },
+      {
+        "h": "What it means for you"
+      },
+      {
+        "ul": [
+          "A flagged spot is a prompt, not a verdict. Your dentist decides whether it is real and whether it needs treatment, watching, or nothing.",
+          "The overlay can make X-rays easier to understand. Seeing a marked area is often clearer than squinting at shades of gray.",
+          "It does not replace an exam. X-rays are one input alongside what your dentist sees, feels and knows about your history.",
+          "No flag does not mean no problem. Software can miss things, just as people can."
+        ]
+      },
+      {
+        "h": "What the evidence does not yet show"
+      },
+      {
+        "p": "FDA clearance means a product met the agency's requirements for its stated use. It is not a promise that it performs the same in every office. The same review notes a scarcity of independent, external validation studies, and says several newer platforms lacked independent clinical validation. Much of the published performance data comes from the companies themselves."
+      },
+      {
+        "p": "That is not a reason to fear the boxes on the screen. It is a reason to treat them as one more opinion in the room."
+      },
+      {
+        "h": "What to ask at your visit"
+      },
+      {
+        "p": "If your dentist uses AI on your X-rays, ask what it flagged, whether they agree, and what they would recommend if the software were switched off. A good answer explains the finding in plain language and connects it to what they saw in your mouth. If treatment is suggested, it should make sense without the software doing the convincing."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FDA-Approved AI Solutions in Dental Imaging: A Narrative Review of Applications, Evidence, and Outlook — International Dental Journal (PMC)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12775797/"
+      },
+      {
+        "title": "Pearl Receives FDA Clearance for Panoramic AI — Dentistry Today",
+        "url": "https://www.dentistrytoday.com/pearl-receives-fda-clearance-for-panoramic-ai/"
+      }
+    ],
+    "updated": "2026-10-19"
+  },
+  {
+    "slug": "ai-checks-on-x-ray-quality",
+    "series": "08",
+    "topic": "AI checks on X-ray quality",
+    "title": "AI that checks the X-ray before anyone reads it",
+    "dek": "Overjet says the FDA has cleared its IRIS software to flag X-ray quality problems right after capture, aiming to catch a bad image before you leave the chair.",
+    "body": [
+      {
+        "p": "Most talk about dental AI is about reading X-rays. The newest clearance is about something more basic: whether the X-ray is good enough to read at all."
+      },
+      {
+        "h": "The announcement"
+      },
+      {
+        "p": "In a press release dated August 4, 2026, the dental AI company Overjet announced a second FDA clearance for IRIS, which it calls AI-native imaging software. The new clearance covers what the company calls real-time image quality checking. IRIS reviews an X-ray immediately after it is taken and flags problems. The company says it checks for eight issues, including cone cuts (part of the image missing because the beam was misaligned), overlapping contacts between teeth, and missed coverage of the area that needed imaging."
+      },
+      {
+        "p": "Overjet says IRIS is the first dental imaging system cleared by the FDA to assess image quality with AI. The company reports that its first IRIS clearance, about a year earlier, covered AI upscaling to sharpen X-ray images across more than 40 sensor models."
+      },
+      {
+        "p": "On performance, the company reports a study of 1,888 images compared against a consensus of three dentists, tested across sensors from 10 manufacturers, with 98.6 percent specificity and 92.6 percent sensitivity for identifying quality issues. These are the company's figures from its own announcement, not an independent study. Treat the release's headline claim about case acceptance the same way; the release text does not show data behind it."
+      },
+      {
+        "h": "Why image quality matters to patients"
+      },
+      {
+        "p": "A blurry or badly angled X-ray can hide the very thing it was meant to show. Overlapping teeth can make it hard to see decay between them. A cut-off image can miss a root tip. When that happens, the usual fix is a retake, sometimes at a later visit."
+      },
+      {
+        "p": "Catching the problem while you are still in the chair means a retake can happen on the spot, rather than a gap in the record or a second trip. Fewer unusable images also means fewer wasted exposures. Dental X-rays use low doses, but the long-standing principle is still to take only the images that are needed, and to take them well."
+      },
+      {
+        "h": "What it does not do"
+      },
+      {
+        "ul": [
+          "It does not diagnose. A quality check judges the picture, not your teeth.",
+          "It does not replace training. The person taking the X-ray still positions the sensor and decides whether to retake.",
+          "It is new. Independent, published evaluation of AI quality checks in everyday offices is still limited."
+        ]
+      },
+      {
+        "h": "What to ask"
+      },
+      {
+        "p": "If you are told an X-ray needs to be retaken, it is fair to ask why. A clear answer, such as part of the tooth being cut off, is a good sign that the office cares about getting usable images the first time. And if an office uses AI to read your X-rays, a good-quality image is what makes that reading worth anything."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Overjet Adds a Second FDA Clearance to IRIS (press release) — Healthcare Dive",
+        "url": "https://www.healthcaredive.com/press-release/20260803-overjet-adds-a-second-fda-clearance-to-iris-the-foundation-of-a-growing-ai/"
+      },
+      {
+        "title": "FDA-Approved AI Solutions in Dental Imaging: A Narrative Review of Applications, Evidence, and Outlook — International Dental Journal (PMC)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12775797/"
+      }
+    ],
+    "updated": "2026-10-19"
+  },
+  {
+    "slug": "digital-smile-previews",
+    "series": "08",
+    "topic": "Digital smile previews",
+    "title": "Digital smile previews: see the plan before anyone touches a tooth",
+    "dek": "Smile design software and printed or milled mock-ups let you preview veneers on your own face, and try them in your mouth, before treatment begins.",
+    "body": [
+      {
+        "p": "The most stressful part of veneers used to be the wait. You agreed to a plan, and you saw the result at the end. Digital smile design changes the order. You see a version of the result first."
+      },
+      {
+        "h": "How a digital preview works"
+      },
+      {
+        "p": "It usually starts with photos of your face and smile, and often a digital scan of your teeth. Design software lets the dentist adjust tooth length, width, shape and the line of the smile against your lips and facial features. The point is not a pretty picture. It is a plan that fits your face, not just your teeth."
+      },
+      {
+        "p": "That plan can then be turned into a physical model. In one approach described in the International Journal of Dentistry, the digital design was used to mill mock-ups, thin tooth-shaped shells that could be tried in the mouth. In a group of 28 patients, the authors reported that 64.3 percent found the on-screen preview very effective and 85.7 percent said the same of the mock-up test."
+      },
+      {
+        "h": "Why the mock-up matters more than the screen"
+      },
+      {
+        "p": "A screen is flat. Your smile is not. A case report in the Journal of Conservative Dentistry put it directly: a digital simulation alone is often not enough for a patient to understand what will change. The authors paired digital planning with a resin mock-up placed over the teeth before porcelain veneers were made."
+      },
+      {
+        "p": "A trial smile lets you check what software cannot. How it feels when you speak. How it looks in daylight, in a mirror, on your phone camera. Whether the length works when you laugh. Natural is a design decision, and you should get a vote."
+      },
+      {
+        "p": "Printed mock-ups are part of newer chairside workflows too. A case report published by Dental Tribune in July 2026 described using digital smile design with patient feedback before printing veneers in the same visit. It was a single case, so read it as an example of the workflow, not proof of results."
+      },
+      {
+        "h": "What a preview cannot promise"
+      },
+      {
+        "ul": [
+          "It is a plan, not a guarantee. Final shade, translucency and fit depend on materials, lab work and your own teeth and gums.",
+          "Software can make anything look possible. Your bite, gum line and tooth position decide what is realistic.",
+          "Some changes need other treatment first, such as orthodontics or gum work, before veneers make sense."
+        ]
+      },
+      {
+        "h": "What to ask at a consultation"
+      },
+      {
+        "p": "Ask whether you will see a preview and, more importantly, whether you can try a mock-up in your mouth before teeth are prepared. Ask what can change after the preview and what cannot. A good plan should be easy to explain, and you should leave the trial smile knowing exactly what you are agreeing to."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Digital smile design and mock-up technique for esthetic treatment planning with porcelain laminate veneers — Journal of Conservative Dentistry (PMC)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6080190/"
+      },
+      {
+        "title": "A New Total Digital Smile Planning Technique (3D-DSP) to Fabricate CAD-CAM Mockups for Esthetic Crowns and Veneers — International Journal of Dentistry (PMC)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4958427/"
+      },
+      {
+        "title": "Chairside replacement of resin composite veneers using Midas 3D printing technology: A case report — Dental Tribune International",
+        "url": "https://www.dental-tribune.com/news/chairside-replacement-of-resin-composite-veneers-using-midas-3d-printing-technology-a-case-report/"
+      }
+    ],
+    "updated": "2026-10-19"
+  },
+  {
+    "slug": "scans-instead-of-impressions",
+    "series": "08",
+    "topic": "Scans instead of impressions",
+    "title": "Scans instead of impressions: goodbye to the putty tray",
+    "dek": "Intraoral scanners build a 3D model of your teeth with a small wand, and for many single-tooth and cosmetic cases they can replace impression putty.",
+    "body": [
+      {
+        "p": "Few things in dentistry are as universally disliked as the impression tray: a mouthful of cold putty, a timer, and the effort not to gag. In many offices it has been replaced by a wand about the size of an electric toothbrush."
+      },
+      {
+        "h": "How a scan works"
+      },
+      {
+        "p": "An intraoral scanner captures thousands of images as it moves over your teeth and stitches them into a 3D model on screen. There is no material to set and no tray to bite on. If an area is missed, the dentist rescans that spot rather than starting over."
+      },
+      {
+        "p": "The file can go straight to a lab or to an in-office milling machine or 3D printer. It also feeds smile design software, which is why scans and digital previews often arrive together."
+      },
+      {
+        "h": "What the research says"
+      },
+      {
+        "p": "A 2025 narrative review in the Australian Dental Journal concluded that digital impressions are highly accurate for single-tooth restorations, integrate smoothly with digital design and manufacturing, and can reduce discomfort and treatment time. It also noted that scans create a record that can be compared against future scans, which helps when monitoring wear or movement over time."
+      },
+      {
+        "p": "Comfort is not universal. In a 2023 study of 28 patients in the Journal of Clinical Medicine, the scan was much faster, about 12 minutes compared with 75.5 for the conventional method, and the models were comparable. Yet patients' discomfort scores in that study were actually higher for scanning, even though the authors described the digital method as more comfortable and accepted. The honest takeaway: faster, yes; painless for everyone, not necessarily."
+      },
+      {
+        "h": "Where putty still has a place"
+      },
+      {
+        "p": "The same review is clear that scans are not yet right for every case. It names three hard situations:"
+      },
+      {
+        "ul": [
+          "Movable soft tissue, such as areas where gums and cheeks shift during scanning.",
+          "Deep margins below the gum line, which the scanner may not see clearly.",
+          "Long-span work, such as large bridges, where small errors can add up across the arch."
+        ]
+      },
+      {
+        "p": "So if your dentist still reaches for a tray now and then, it is not necessarily old-fashioned. It may be the right tool for that job."
+      },
+      {
+        "h": "What it means for a cosmetic patient"
+      },
+      {
+        "p": "For veneers and smile makeovers, a scan makes the whole process more visual. You can see your own teeth from angles you never have, and the same data can become a preview or a mock-up. Ask whether the office scans, how the scan will be used in your plan, and whether you can see it. If anything in your case calls for a traditional impression, ask why. A clear answer is a good sign."
+      }
+    ],
+    "sources": [
+      {
+        "title": "Are Conventional Impressions Obsolete? A Narrative Review on the Applicability of Intraoral Scanners — Australian Dental Journal (PMC)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12747623/"
+      },
+      {
+        "title": "Evaluation of Intraoral Full-Arch Scan versus Conventional Preliminary Impression — Journal of Clinical Medicine (PMC)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10487891/"
+      }
+    ],
+    "updated": "2026-10-19"
+  },
+  {
+    "slug": "same-day-3d-printed-veneers",
+    "series": "08",
+    "topic": "Same-day 3D-printed veneers",
+    "title": "Same-day 3D-printed veneers: fast is real, but resin is not porcelain",
+    "dek": "Chairside printers can make resin veneers in a single visit. The speed is real; long-term evidence is thin, and printed resin still differs from porcelain.",
+    "body": [
+      {
+        "p": "Veneers in one appointment sounds like a headline built for social media. It is also, increasingly, something offices can do. The useful question is not whether it is possible. It is what you are getting."
+      },
+      {
+        "h": "What was reported"
+      },
+      {
+        "p": "In July 2026, Dental Tribune published a case report describing chairside replacement of a patient's worn composite veneers using SprintRay's Midas 3D printing system and a ceramic-filled printable resin called Crown HT. The team used a minimal preparation, an intraoral scan and digital smile design, then printed six veneers in under 10 minutes, with about 15 minutes of washing and curing afterward. At a two-week follow-up, the report describes healthy gums and no complications."
+      },
+      {
+        "p": "Context matters. This is a single patient with a two-week follow-up. It appeared in a section of the publisher's site that features the manufacturer's products. It is an illustration of a workflow, not independent evidence that printed veneers last."
+      },
+      {
+        "h": "Where printed resin differs from porcelain"
+      },
+      {
+        "p": "Printed veneers are usually resin-based, sometimes filled with ceramic particles. Porcelain veneers are ceramic. That difference shows up in the research."
+      },
+      {
+        "p": "A 2026 scoping review in Materials, covering 111 studies, found the evidence was mostly laboratory testing, with only six clinical studies. Printed restorations were often comparable to milled ones in fit and accuracy, but printed resins were more often limited by lower strength and color instability. The authors concluded the evidence supports technical feasibility more strongly than long-term durability."
+      },
+      {
+        "ul": [
+          "Strength and wear: ceramics generally resist wear and hardness testing better than printed resins.",
+          "Color: resins can stain or shift color over time; well-made porcelain is known for holding its shade.",
+          "Track record: porcelain veneers have a long clinical history. Printed definitive veneers do not yet."
+        ]
+      },
+      {
+        "p": "Printing is not limited to resin. A 2026 scoping review in the International Journal of Dentistry reported that printed zirconia and lithium disilicate veneers performed well in the studies it found, while noting that milling remains the more established method for ceramics and that clinical trials are still needed."
+      },
+      {
+        "h": "Who it might suit"
+      },
+      {
+        "p": "Same-day resin can make sense when speed matters, when a conservative or reversible option is appealing, or as a step before a final porcelain plan. It may not be the right choice when you want the longest track record for color and wear."
+      },
+      {
+        "h": "What to ask"
+      },
+      {
+        "p": "Ask what material the veneers are made of, how long the office expects them to last, and how they will be maintained or repaired. Ask how much tooth will be prepared. And ask the simple question: if speed were not a factor, would they still recommend this material for your smile?"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Chairside replacement of resin composite veneers using Midas 3D printing technology: A case report — Dental Tribune International",
+        "url": "https://www.dental-tribune.com/news/chairside-replacement-of-resin-composite-veneers-using-midas-3d-printing-technology-a-case-report/"
+      },
+      {
+        "title": "Three-Dimensional Printed Materials for Definitive Ceramic and Resin Restorations: A Scoping Review — Materials (PMC)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13567340/"
+      },
+      {
+        "title": "Advances in Digital Restorative Dentistry: Evaluation of Clinical Outcome Parameters of CAD/CAM and 3D-Printed Inlays, Onlays, and Veneers — International Journal of Dentistry (PMC)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13127349/"
+      }
+    ],
+    "updated": "2026-10-19"
+  },
+  {
+    "slug": "dental-mri-arrives-in-the-us",
+    "series": "08",
+    "topic": "Dental MRI arrives in the US",
+    "title": "Dental MRI arrives in the US: imaging without radiation",
+    "dek": "Dentsply Sirona and Siemens Healthineers announced FDA clearance for a dental-dedicated MRI in March 2026: soft-tissue detail without ionizing radiation.",
+    "body": [
+      {
+        "p": "Dental imaging has always meant X-rays: small films, panoramic images and 3D cone-beam CT scans. All of them use ionizing radiation, in low doses. In 2026 a different kind of scanner entered the picture."
+      },
+      {
+        "h": "The announcement"
+      },
+      {
+        "p": "On March 9, 2026, Dentsply Sirona and Siemens Healthineers announced that MAGNETOM Free.Max Dental Edition, which they describe as the first dental-dedicated MRI system, had received FDA clearance in the United States. The companies said the clearance followed a clinical trial spanning endodontics, periodontics, jaw joint (TMJ) problems, tooth extraction and orthodontics."
+      },
+      {
+        "p": "According to the companies, the trial showed the system can distinguish active inflammation from healthy and scar tissue, assess whether a tooth's pulp is alive without touching it, and show teeth in relation to neighboring teeth and nerves. A dental-specific field of view means the scan covers teeth and jaws, and the companies say no brain tissue is visible. They report an average workflow time of under 20 minutes."
+      },
+      {
+        "p": "This is a company announcement. Trade coverage, including a piece in Dental Tribune labeled as an advertorial, did not report trial size or accuracy figures. Independent, peer-reviewed results will matter more than launch language."
+      },
+      {
+        "h": "Why MRI is different"
+      },
+      {
+        "p": "X-rays show hard tissue well: enamel, dentin, bone. They show soft tissue poorly. MRI uses magnetic fields and radio waves rather than ionizing radiation, and it is good at exactly what X-rays miss, such as inflammation, nerves and the soft structures of the jaw joint."
+      },
+      {
+        "p": "The companies position dental MRI as a complement to intraoral, panoramic and CBCT imaging, not a replacement. That framing is worth keeping. Your routine checkup X-rays are not going away."
+      },
+      {
+        "h": "What it means for you, for now"
+      },
+      {
+        "ul": [
+          "Availability is limited. The companies say the system is aimed mainly at hospitals, large clinics and universities, not typical neighborhood practices.",
+          "It answers specific questions. Expect it for complex cases, such as unclear tooth pain, jaw joint problems or surgical planning, not as a routine cosmetic scan.",
+          "MRI has its own rules. People with certain implants or devices may not be able to have one, so screening questions still apply."
+        ]
+      },
+      {
+        "h": "What to ask"
+      },
+      {
+        "p": "If you are planning cosmetic work, this will rarely be part of your path. But if your dentist is chasing a problem that X-rays cannot explain, it is reasonable to ask whether advanced imaging, including MRI, might help and where it is available. As with any new tool, ask what question the scan is meant to answer and how the result will change your plan."
+      }
+    ],
+    "sources": [
+      {
+        "title": "First-ever Dental Dedicated MRI Validated in Clinical Trial and Cleared by FDA for Advanced Soft-Tissue Diagnostics (press release) — BioSpace",
+        "url": "https://www.biospace.com/press-releases/first-ever-dental-dedicated-mri-validated-in-clinical-trial-and-cleared-by-fda-for-advanced-soft-tissue-diagnostics"
+      },
+      {
+        "title": "First-ever dental MRI machine receives FDA clearance — Dental Tribune International",
+        "url": "https://www.dental-tribune.com/news/first-ever-dental-mri-machine-receives-fda-clearance/"
+      }
+    ],
+    "updated": "2026-10-19"
+  },
+  {
+    "slug": "should-you-trust-an-ai-diagnosis",
+    "series": "08",
+    "topic": "Should you trust an AI diagnosis?",
+    "title": "Should you trust an AI diagnosis? Trust the dentist who uses it well",
+    "dek": "Dental AI works best as a second reader. Your dentist makes the diagnosis and stays responsible for it, and you are entitled to ask how the tool is used.",
+    "body": [
+      {
+        "p": "Short answer: you should not trust an AI diagnosis on its own, because in dentistry there is not supposed to be one. The software flags. The dentist decides. Your trust belongs with how the two work together."
+      },
+      {
+        "h": "What AI is good at"
+      },
+      {
+        "p": "FDA-cleared dental AI is now common. A December 2025 review in the International Dental Journal counted 29 cleared imaging products from 13 companies, covering tasks like spotting decay, measuring bone around teeth and charting. The review reports that the performance data submitted to the FDA was generally strong."
+      },
+      {
+        "p": "Software does not get tired at the end of a long day, and it looks at every corner of every image. As a second reader, that is useful. It can prompt a closer look at a spot that might otherwise be missed, and the on-screen markings can help you see what your dentist is talking about."
+      },
+      {
+        "h": "Where caution is warranted"
+      },
+      {
+        "p": "The same review flags a scarcity of independent, external validation. FDA clearance shows a product met requirements for its intended use. It does not guarantee the same results in every office, on every X-ray machine, for every patient."
+      },
+      {
+        "p": "The American Dental Association has made similar points. In a response to a federal request for information, reported by Dental Tribune in March 2026, the ADA called for validated datasets, independent evaluation frameworks and standardized labeling for AI tools, so that dentists and patients can understand what they are using."
+      },
+      {
+        "ul": [
+          "A flag is not a cavity. Some flagged areas are worth watching rather than treating.",
+          "No flag is not a clean bill of health. AI can miss findings too.",
+          "Context matters. Your history, symptoms and what the dentist sees in your mouth all count."
+        ]
+      },
+      {
+        "h": "Questions to ask your dentist"
+      },
+      {
+        "ul": [
+          "Do you use AI on my X-rays, and what does it check for?",
+          "Do you agree with what it flagged here? Why or why not?",
+          "Would you recommend this treatment if the software had not flagged it?",
+          "Can we monitor this area instead of treating it now?",
+          "Can I see the X-ray and the markings?"
+        ]
+      },
+      {
+        "h": "The bottom line"
+      },
+      {
+        "p": "AI is a good assistant and a poor decision maker. The dentist stays responsible for the diagnosis, and a good one will explain it without hiding behind the software. If a recommendation only makes sense because a program said so, ask more questions or get a second opinion from a person who examines you in the chair."
+      }
+    ],
+    "sources": [
+      {
+        "title": "FDA-Approved AI Solutions in Dental Imaging: A Narrative Review of Applications, Evidence, and Outlook — International Dental Journal (PMC)",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12775797/"
+      },
+      {
+        "title": "US dentistry: ADA highlights challenges in AI adoption — Dental Tribune International",
+        "url": "https://www.dental-tribune.com/news/us-dentistry-ada-highlights-challenges-in-ai-adoption/"
+      }
+    ],
+    "updated": "2026-10-19"
+  }
+]
