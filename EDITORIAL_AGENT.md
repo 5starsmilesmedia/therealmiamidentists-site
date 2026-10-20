@@ -15,16 +15,20 @@ and the series descriptions on the Editorial page.
 
 ## How the content is organized
 
-- `content/articles/NN.json`: one file per Editorial series (01 to 08). Each
+- `content/articles/NN.json`: one file per Editorial series (01 to 09). Each
   object is one topic button on the Editorial page and one article page at
   `/articles/<slug>`. The format and writing rules are in
   `content/ARTICLE_BRIEF.md`. Read it before writing anything.
+- `content/technology.json`: the Technology tab (`/technology`). It lists
+  series 08 (Tech & AI) and 09 (Conventions) as image cards. Its `images`
+  map gives a card its photo by article slug; a new article without an entry
+  simply shows as a text card. Only use images that already exist in `img/`.
 - `content/feed.json`: the captions over the Feed photos. Each caption links to
   an article by slug.
 - `index.html` `#faq`: the homepage FAQ.
 - `editorial.html`: the one-line description under each series title.
 
-## What to do each run (3 or 4 changes total)
+## What to do each run (4 or 5 changes total)
 
 1. **Tech news, every week.** Use web search to find dental technology and AI
    news from the last 30 days (FDA clearances, new imaging, AI tools, scanners,
@@ -32,13 +36,17 @@ and the series descriptions on the Editorial page.
    about the most significant item, or update an existing 08 article when the
    news continues a story already covered. Cite the announcement and any
    independent coverage you opened.
-2. **One more article.** Add one new article to another series, rotating
+2. **Conventions, every week.** Check the official sites of the meetings in
+   `content/articles/09.json`. When a meeting publishes or changes its next
+   dates, update that article and the calendar overview, and set `updated`.
+   Never guess a date: write "dates to be announced" until it is official.
+3. **One more article.** Add one new article to another series, rotating
    through 01 to 07 (check `git log` to see which series were touched
    recently), or substantially improve an existing one.
-3. **Feed.** Rewrite one or two captions in `content/feed.json` so they point
+4. **Feed.** Rewrite one or two captions in `content/feed.json` so they point
    to recent or relevant articles. Keep each caption under 60 characters, in
    the house voice. The `img` values must stay exactly as they are.
-4. **Optional:** add or improve one homepage FAQ answer.
+5. **Optional:** add or improve one homepage FAQ answer.
 
 Never remove or rename an existing question or article. Only add new ones
 or improve the answers. The build stops with an error if a question that is
@@ -81,7 +89,7 @@ people and cases for Miami Smile Files and The Redo Room come only from here.
 
 1. Both build scripts finish without errors.
 2. `git diff --stat` shows changes only in `content/`, `articles/`,
-   `editorial.html`, `feed.html`, `index.html`, `sitemap.xml` and `llms.txt`.
+   `editorial.html`, `technology.html`, `feed.html`, `index.html`, `sitemap.xml` and `llms.txt`.
 3. Image counts on `index.html`, `editorial.html` and `feed.html` are
    unchanged, and every changed HTML file still ends with `</html>`.
 
