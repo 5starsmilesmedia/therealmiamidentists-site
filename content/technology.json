@@ -1,0 +1,85 @@
+{
+  "meta_title": "Technology | The Real Miami Dentists",
+  "meta_description": "Dental technology news from The Real Miami Dentists: AI, digital scans, 3D printing, smile previews and the major dental conventions across America.",
+  "hero": {
+    "img": "img/tech-hero-digital-smile.jpg",
+    "alt": "Dentist in magnification loupes working beside a monitor showing a digital smile design",
+    "kicker": "10 · Technology",
+    "title": "The future of the smile.",
+    "text": "The tools changing cosmetic dentistry, explained without the hype, and the conventions across America where dentists see them first."
+  },
+  "sections": [
+    {
+      "series": "08",
+      "title": "Tech & AI news",
+      "text": "AI that reads X-rays, scanners that replace impression putty, 3D-printed restorations and digital smile previews: what each one is, and what it means in the chair."
+    },
+    {
+      "series": "09",
+      "title": "Conventions in America",
+      "text": "The major dental meetings where new tools and techniques debut, with verified dates and cities, and what they mean for patients."
+    }
+  ],
+  "images": {
+    "ai-that-reads-your-x-rays": [
+      "img/tech-ai-xray.jpg",
+      "Gloved hand pointing at a panoramic dental X-ray on a monitor"
+    ],
+    "ai-checks-on-x-ray-quality": [
+      "img/assets-frames-web-feed-06.jpg",
+      "Dentist in surgical cap, mask and loupes in profile, low-key light"
+    ],
+    "digital-smile-previews": [
+      "img/tech-smile-preview.jpg",
+      "Smiling patient in a dental chair viewing a digital smile preview on a tablet"
+    ],
+    "scans-instead-of-impressions": [
+      "img/tech-intraoral-scanner.jpg",
+      "Black-gloved hand holding an intraoral dental scanner against black"
+    ],
+    "same-day-3d-printed-veneers": [
+      "img/tech-3d-printing.jpg",
+      "3D printer build platform lifting freshly printed dental restorations from a resin vat"
+    ],
+    "dental-mri-arrives-in-the-us": [
+      "img/assets-frames-web-feed-02.jpg",
+      "Cosmetic dentist wearing magnification loupes treating a patient under the operatory light"
+    ],
+    "should-you-trust-an-ai-diagnosis": [
+      "img/tech-hero-digital-smile.jpg",
+      "Dentist in magnification loupes working beside a monitor showing a digital smile design"
+    ],
+    "the-2026-2027-dental-convention-calendar": [
+      "img/tech-convention-hall.jpg",
+      "Overhead view of a dental convention exhibit hall with dental chairs and crowds of professionals"
+    ],
+    "greater-new-york-dental-meeting": [
+      "img/tech-convention-lecture.jpg",
+      "Audience at a dental conference facing a stage screen showing a close-up of a natural smile"
+    ],
+    "chicago-midwinter-meeting": [
+      "img/tech-convention-handson.jpg",
+      "Dentist in a suit practicing on a training model of teeth at a convention demonstration"
+    ],
+    "yankee-dental-congress": [
+      "img/tech-convention-hall.jpg",
+      "Overhead view of a dental convention exhibit hall with dental chairs and crowds of professionals"
+    ],
+    "hinman-dental-meeting": [
+      "img/tech-convention-lecture.jpg",
+      "Audience at a dental conference facing a stage screen showing a close-up of a natural smile"
+    ],
+    "aacd-scientific-session": [
+      "img/tech-smile-preview.jpg",
+      "Smiling patient in a dental chair viewing a digital smile preview on a tablet"
+    ],
+    "florida-dental-convention": [
+      "img/tech-convention-handson.jpg",
+      "Dentist in a suit practicing on a training model of teeth at a convention demonstration"
+    ],
+    "ada-smilecon": [
+      "img/tech-convention-lecture.jpg",
+      "Audience at a dental conference facing a stage screen showing a close-up of a natural smile"
+    ]
+  }
+}
