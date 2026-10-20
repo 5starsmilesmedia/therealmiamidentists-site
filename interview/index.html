@@ -302,8 +302,9 @@
 <script>
 /* ===================== SETTINGS — EDIT THESE ===================== */
 const CONFIG = {
-  // Paste the Web App URL from Google Apps Script (see google-apps-script.gs)
-  ENDPOINT: "PASTE_YOUR_APPS_SCRIPT_URL_HERE",
+  // Google Form that saves sign-ups to the "Street Interview Sign-ups" sheet
+  ENDPOINT: "https://docs.google.com/forms/d/e/1FAIpQLScVxl8ai4e3Oga2WbUib3r7LIeSDSPUuEBI0dM_am9XQ8FEMw/formResponse",
+  FIELDS: { name: "entry.1085912021", email: "entry.1349310964", instagram: "entry.105114627", details: "entry.2137600976", signature: "entry.1854170767" },
   // The practice's Instagram handle (without @) for the "Follow us" button
   PRACTICE_IG: "therealmiamidentists",
 };
@@ -402,6 +403,18 @@ window.addEventListener("resize", sizeCanvas);
 sizeCanvas();
 $("sig-date").textContent = "Date: " + new Date().toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"});
 
+/* ---------- Signature export: small PNG so it fits in one spreadsheet cell ---------- */
+function signatureData(){
+  const w = 360, h = Math.round(w * canvas.height / canvas.width);
+  const t = document.createElement("canvas"); t.width = w; t.height = h;
+  const tc = t.getContext("2d");
+  tc.fillStyle = "#fff"; tc.fillRect(0, 0, w, h);
+  tc.drawImage(canvas, 0, 0, w, h);
+  let url = t.toDataURL("image/png");
+  if (url.length > 40000) url = t.toDataURL("image/jpeg", 0.6);
+  return url;
+}
+
 /* ---------- Validate + submit ---------- */
 function flag(inputId, errId, bad){
   if (inputId) $(inputId).classList.toggle("bad", bad);
@@ -442,7 +455,7 @@ $("f").addEventListener("submit", async e => {
     clauses_agreed: [...document.querySelectorAll(".cl")].filter(c => c.checked).map(c => c.id).join(", "),
     is_minor: minor,
     guardian_name: minor ? gname : "",
-    signature_png: canvas.toDataURL("image/png"),
+    signature_png: signatureData(),
     release_text: $("release-text").innerText,
     source: SOURCE,
     user_agent: navigator.userAgent,
@@ -459,8 +472,29 @@ $("f").addEventListener("submit", async e => {
   }
 
   try {
-    // text/plain avoids a CORS preflight, which Apps Script doesn't answer
-    await fetch(CONFIG.ENDPOINT, { method:"POST", mode:"no-cors", headers:{"Content-Type":"text/plain;charset=utf-8"}, body: JSON.stringify(payload) });
+    const yn = v => v ? "Yes" : "No";
+    const details = [
+      "Tag me: " + yn(payload.tag_me),
+      "IG confirmed: " + yn(payload.instagram_confirmed),
+      "Consent video/voice/photos: " + yn(payload.consent_video),
+      "Consent name/IG tag: " + yn(payload.consent_social_name),
+      "Sections agreed: " + payload.clauses_agreed,
+      "Minor: " + yn(payload.is_minor) + (payload.is_minor ? " (guardian: " + payload.guardian_name + ")" : ""),
+      "Source: " + (payload.source || "-"),
+      "Signed: " + new Date(payload.submitted_at).toLocaleString("en-US"),
+      "Device: " + payload.user_agent,
+      "",
+      "RELEASE TEXT AGREED TO:",
+      payload.release_text,
+    ].join("\n");
+    const F = CONFIG.FIELDS, body = new URLSearchParams();
+    body.append(F.name, payload.name);
+    body.append(F.email, payload.email);
+    body.append(F.instagram, payload.instagram);
+    body.append(F.details, details);
+    body.append(F.signature, payload.signature_png);
+    // Google Forms doesn't allow reading the response cross-site; no-cors still delivers it
+    await fetch(CONFIG.ENDPOINT, { method:"POST", mode:"no-cors", body });
     $("f").style.display = "none";
     $("thanks").classList.add("show");
     scrollTo({top:0, behavior:"smooth"});
