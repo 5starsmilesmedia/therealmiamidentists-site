@@ -31,11 +31,17 @@ CHIP_STYLE = ("border: 1px solid rgb(38, 38, 38); padding: 8px 14px; font-size: 
               "letter-spacing: 0.14em; text-transform: uppercase;")
 CHIP_ROW = ('<div style="display: flex; flex-wrap: wrap; justify-content: center; '
             'gap: 8px; max-width: 820px;">')
-TECH_TITLE = "Dental Tech &amp; AI"
-TECH_DESC = ("News on the tools changing dentistry: AI, digital scans, 3D printing "
-             "and what they mean for your smile.")
-TECH_IMG = ("img/assets-frames-web-feed-07.jpg",
-            "Gloved hand holding a dental handpiece with water spray against black")
+# Series added beyond the original seven, cloned from the series before them.
+NEW_SECTIONS = [
+    ("08", "Dental Tech &amp; AI",
+     "News on the tools changing dentistry: AI, digital scans, 3D printing and what they mean for your smile.",
+     "img/assets-frames-web-feed-07.jpg",
+     "Gloved hand holding a dental handpiece with water spray against black"),
+    ("09", "Conventions &amp; Events",
+     "Where dentistry\u2019s new tools and techniques debut: the major dental meetings across America, and what they mean for patients.",
+     "img/tech-convention-lecture.jpg",
+     "Audience at a dental conference facing a stage screen showing a close-up of a natural smile"),
+]
 HOVER_CSS = (".trmd-chip{color:rgb(244,242,238);transition:border-color .2s ease,color .2s ease}"
              ".trmd-chip:hover{border-color:rgb(201,204,206)!important;color:rgb(244,242,238)}"
              ".trmd-cap{transition:background .3s ease}.trmd-cap:hover .trmd-cap-cta{color:rgb(244,242,238)}")
@@ -70,28 +76,30 @@ SERIES_RE = re.compile(
     re.S)
 
 
-def ensure_tech_section(page):
-    """Add series 08 by cloning series 07's markup once."""
-    if f">{TECH_TITLE}</h2>" in page:
-        return page
-    start = page.index('<div style="display: flex; flex-direction: column; align-items: center; '
-                       'text-align: center; gap: 28px; padding: 72px 40px 56px;"><span',
-                       page.index(">07</span>") - 400)
-    end = page.index('</div><div style="background: rgb(244, 242, 238)', start)
-    block = page[start:end]
-    block = block.replace(">07</span>", ">08</span>", 1)
-    block = re.sub(r"(<h2[^>]*>).*?(</h2>)", lambda m: m.group(1) + TECH_TITLE + m.group(2), block, 1)
-    block = re.sub(r"(</h2><p[^>]*>).*?(</p>)", lambda m: m.group(1) + esc(TECH_DESC) + m.group(2), block, 1)
-    i = block.index(CHIP_ROW) + len(CHIP_ROW)
-    block = block[:i] + block[block.index("</div>", i):]
-    block = re.sub(r'<img src="[^"]*" alt="[^"]*"',
-                   f'<img src="{TECH_IMG[0]}" alt="{attr(TECH_IMG[1])}"', block, 1)
-    return page[:end] + block + page[end:]
+def ensure_new_sections(page):
+    """Add each series in NEW_SECTIONS once, cloned from the series before it."""
+    for num, title, desc, img, alt in NEW_SECTIONS:
+        if f">{title}</h2>" in page:
+            continue
+        prev = f"{int(num) - 1:02d}"
+        start = page.index('<div style="display: flex; flex-direction: column; align-items: center; '
+                           'text-align: center; gap: 28px; padding: 72px 40px 56px;"><span',
+                           page.index(f">{prev}</span>") - 400)
+        end = page.index('</div><div style="background: rgb(244, 242, 238)', start)
+        block = page[start:end]
+        block = block.replace(f">{prev}</span>", f">{num}</span>", 1)
+        block = re.sub(r"(<h2[^>]*>).*?(</h2>)", lambda m: m.group(1) + title + m.group(2), block, 1)
+        block = re.sub(r"(</h2><p[^>]*>).*?(</p>)", lambda m: m.group(1) + esc(desc) + m.group(2), block, 1)
+        i = block.index(CHIP_ROW) + len(CHIP_ROW)
+        block = block[:i] + block[block.index("</div>", i):]
+        block = re.sub(r'<img src="[^"]*" alt="[^"]*"', f'<img src="{img}" alt="{attr(alt)}"', block, 1)
+        page = page[:end] + block + page[end:]
+    return page
 
 
 def build_editorial(series):
     path = ROOT / "editorial.html"
-    page = ensure_tech_section(path.read_text())
+    page = ensure_new_sections(path.read_text())
     by_num = dict(series)
     seen = set()
 
@@ -331,12 +339,123 @@ def build_index_files(series, titles):
     (ROOT / "llms.txt").write_text(llms)
 
 
+
+# ---------- technology.html + nav link ----------
+
+NAV_INACTIVE = ("cursor: pointer; font-size: 9px; font-weight: 600; letter-spacing: 0.28em; "
+                "text-transform: uppercase; padding: 10px 12px; color: rgb(138, 138, 138); "
+                "border-bottom: 1px solid transparent; text-decoration: none;")
+NAV_ACTIVE = ("cursor: pointer; font-size: 9px; font-weight: 600; letter-spacing: 0.28em; "
+              "text-transform: uppercase; padding: 10px 12px; color: rgb(244, 242, 238); "
+              "border-bottom: 1px solid rgb(201, 204, 206); text-decoration: none;")
+EDITORIAL_LINK = re.compile(r'(<a class="scp0" style="[^"]*" href="/editorial">Editorial</a>)')
+
+TECH_CSS = """
+.trmd-tech-hero{position:relative;aspect-ratio:16/9;max-height:88vh;width:100%;overflow:hidden;background:rgb(5,5,5);border-bottom:1px solid rgb(38,38,38)}
+.trmd-tech-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.trmd-tech-hero .ov{position:absolute;left:0;right:0;bottom:0;padding:160px 80px 56px;background:linear-gradient(rgba(5,5,5,0),rgba(5,5,5,.88));display:flex;flex-direction:column;gap:18px}
+.trmd-tech-hero .k,.trmd-tech-sec .k{font-size:10px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;color:rgb(201,204,206)}
+.trmd-tech-hero h1{margin:0;font-family:inherit;font-weight:600;font-size:clamp(40px,7vw,120px);line-height:.95;letter-spacing:-.03em;text-transform:uppercase;color:rgb(244,242,238)}
+.trmd-tech-hero p{margin:0;max-width:640px;font-size:17px;line-height:1.6;color:rgb(201,204,206)}
+.trmd-tech-sec{padding:96px 40px 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px}
+.trmd-tech-sec h2{margin:0;font-family:inherit;font-weight:600;font-size:clamp(32px,4.5vw,64px);line-height:1;letter-spacing:-.03em;text-transform:uppercase}
+.trmd-tech-sec p{margin:0;max-width:620px;font-size:16px;line-height:1.6;color:rgb(184,182,177)}
+.trmd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1px;background:rgb(38,38,38);border:1px solid rgb(38,38,38);width:calc(100% - 80px);max-width:1400px;margin:48px auto 0}
+.trmd-card{background:rgb(5,5,5);display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.trmd-card .im{aspect-ratio:16/9;overflow:hidden;background:rgb(15,15,15)}
+.trmd-card .im img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.trmd-card:hover .im img{transform:scale(1.03)}
+.trmd-card .bd{padding:28px 28px 32px;display:flex;flex-direction:column;gap:12px}
+.trmd-card .ck{font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgb(138,138,138)}
+.trmd-card h3{margin:0;font-family:inherit;font-weight:600;font-size:clamp(20px,1.8vw,26px);line-height:1.15;letter-spacing:-.01em;color:rgb(244,242,238)}
+.trmd-card .dk{margin:0;font-size:14px;line-height:1.6;color:rgb(184,182,177)}
+.trmd-card .rd{font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:rgb(201,204,206)}
+.trmd-card:hover .rd{color:rgb(244,242,238)}
+.trmd-tech-end{height:96px}
+@media (max-width:640px){.trmd-tech-hero{aspect-ratio:4/5}.trmd-tech-hero .ov{padding:96px 20px 32px}.trmd-tech-sec{padding:64px 20px 0}.trmd-grid{width:calc(100% - 40px)}}
+"""
+
+
+def add_nav_link(page, active=False):
+    if 'href="/technology"' in page:
+        return page
+    style = NAV_ACTIVE if active else NAV_INACTIVE
+    return EDITORIAL_LINK.sub(
+        lambda m: m.group(1) + f'<a class="scp0" style="{style}" href="/technology">Technology</a>', page, 1)
+
+
+def add_nav_everywhere():
+    for path in sorted(ROOT.glob("*.html")):
+        page = path.read_text()
+        new = add_nav_link(page)
+        if new != page:
+            path.write_text(new)
+
+
+def build_technology(series, titles, editorial_page):
+    cfg_path = CONTENT / "technology.json"
+    if not cfg_path.exists():
+        return False
+    cfg = json.loads(cfg_path.read_text())
+    by_num = dict(series)
+    images = cfg.get("images", {})
+    head, header, footer = page_shell(editorial_page)
+    url = f"{SITE}/technology"
+    h = head
+    h = re.sub(r"<title>.*?</title>", f"<title>{esc(cfg['meta_title'])}</title>", h, 1, re.S)
+    for prop in ('name="description"', 'property="og:description"', 'name="twitter:description"'):
+        h = re.sub(r'(<meta ' + prop + r' content=")[^"]*', lambda m: m.group(1) + attr(cfg["meta_description"]), h, 1)
+    for prop in ('property="og:title"', 'name="twitter:title"'):
+        h = re.sub(r'(<meta ' + prop + r' content=")[^"]*', lambda m: m.group(1) + attr(cfg["meta_title"]), h, 1)
+    h = re.sub(r'(<link rel="canonical" href=")[^"]*', lambda m: m.group(1) + url, h, 1)
+    h = re.sub(r'(<meta property="og:url" content=")[^"]*', lambda m: m.group(1) + url, h, 1)
+    ld = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": f"{SITE}/"},
+        {"@type": "ListItem", "position": 2, "name": "Technology", "item": url}]}
+    h = re.sub(r'<script type="application/ld\+json">.*?</script>',
+               lambda m: '<script type="application/ld+json">' + json.dumps(ld, separators=(",", ":")) + "</script>",
+               h, 1, re.S)
+    h += f"<style>{TECH_CSS}</style>"
+    # Editorial is active in the shell; make Technology the active tab instead.
+    header = add_nav_link(header)
+    header = header.replace(f'style="{NAV_ACTIVE}" href="/editorial"', f'style="{NAV_INACTIVE}" href="/editorial"')
+    header = header.replace(f'style="{NAV_INACTIVE}" href="/technology"', f'style="{NAV_ACTIVE}" href="/technology"')
+
+    hero = cfg["hero"]
+    out = [f'<div style="flex: 1 1 0%;"><div data-screen-label="10 Technology">'
+           f'<div class="trmd-tech-hero"><img src="{hero["img"]}" alt="{attr(hero["alt"])}">'
+           f'<div class="ov"><span class="k">{esc(hero["kicker"])}</span><h1>{esc(hero["title"])}</h1>'
+           f'<p>{esc(hero["text"])}</p></div></div>']
+    for sec in cfg["sections"]:
+        items = by_num.get(sec["series"], [])
+        out.append(f'<div class="trmd-tech-sec"><span class="k">{sec["series"]} · {esc(html.unescape(titles.get(sec["series"], "")))}</span>'
+                   f'<h2>{esc(sec["title"])}</h2><p>{esc(sec["text"])}</p></div><div class="trmd-grid">')
+        for a in items:
+            im = images.get(a["slug"])
+            pic = f'<div class="im"><img src="/{im[0]}" alt="{attr(im[1])}" loading="lazy"></div>' if im else ""
+            out.append(f'<a class="trmd-card" href="/articles/{a["slug"]}">{pic}<div class="bd">'
+                       f'<span class="ck">{esc(a["topic"])}</span><h3>{esc(a["title"])}</h3>'
+                       f'<p class="dk">{esc(a["dek"])}</p><span class="rd">Read the article →</span></div></a>')
+        out.append("</div>")
+    out.append('<div class="trmd-tech-end"></div></div></div>')
+    doc = absolutize(h) + "</head>\n" + absolutize(header) + "".join(out) + absolutize(footer)
+    (ROOT / "technology.html").write_text(doc)
+    sm = (ROOT / "sitemap.xml").read_text()
+    if f"<loc>{SITE}/technology</loc>" not in sm:
+        sm = sm.replace(f"<url><loc>{SITE}/proof</loc>",
+                        f"<url><loc>{SITE}/technology</loc><lastmod>{date.today().isoformat()}</lastmod><priority>0.7</priority></url>\n  <url><loc>{SITE}/proof</loc>", 1)
+        (ROOT / "sitemap.xml").write_text(sm)
+    return True
+
 def main():
     series = load_articles()
+    add_nav_everywhere()
     page, titles = build_editorial(series)
     n = build_articles(series, titles, page)
     f = build_feed({a['slug'] for _, items in series for a in items})
     build_index_files(series, titles)
+    t = build_technology(series, titles, page)
+    print("Technology page built" if t else "No content/technology.json; Technology page skipped")
     print(f"Built {n} articles across {len(series)} series; {f} feed captions")
 
 
