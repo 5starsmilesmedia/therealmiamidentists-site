@@ -224,49 +224,19 @@
       </div>
 
       <div class="clause">
-        <h4>2. Video &amp; voice</h4>
-        <p>The Practice may edit, cut, caption and publish video and audio of me on social media (including Instagram, TikTok, Facebook and YouTube), its website, and in advertising and promotional materials, worldwide and without a time limit.</p>
-        <label class="agree"><input type="checkbox" class="cl" id="c-video"> I agree</label>
+        <h4>2. Video, voice &amp; photos</h4>
+        <p>The Practice may edit, cut, caption and publish video and audio of me, and still photos and screenshots taken from the Recordings, on social media (including Instagram, TikTok, Facebook and YouTube), its website, and in advertising and promotional materials, worldwide and without a time limit.</p>
+        <label class="agree"><input type="checkbox" class="cl" id="c-media"> I agree</label>
       </div>
 
       <div class="clause">
-        <h4>3. Photos</h4>
-        <p>The same permission applies to still photos and screenshots taken from the Recordings.</p>
-        <label class="agree"><input type="checkbox" class="cl" id="c-photo"> I agree</label>
-      </div>
-
-      <div class="clause">
-        <h4>4. Name &amp; Instagram tag</h4>
+        <h4>3. Name &amp; Instagram tag</h4>
         <p>The Practice may show my first name and tag my Instagram handle (if I gave one) in posts that feature me.</p>
         <label class="agree"><input type="checkbox" class="cl" id="c-social"> I agree</label>
       </div>
-
-      <div class="clause">
-        <h4>5. No payment &amp; no approval</h4>
-        <p>I will not be paid or otherwise compensated for this use, and I do not have the right to review or approve the final edited content.</p>
-        <label class="agree"><input type="checkbox" class="cl" id="c-nopay"> I agree</label>
-      </div>
-
-      <div class="clause">
-        <h4>6. Release of claims</h4>
-        <p>I release the Practice from any claims arising from the use of the Recordings, including claims of invasion of privacy, right of publicity or defamation.</p>
-        <label class="agree"><input type="checkbox" class="cl" id="c-release"> I agree</label>
-      </div>
-
-      <div class="clause">
-        <h4>7. Not dental advice</h4>
-        <p>This interview is not a dental consultation. Nothing said during it is medical or dental advice, and no patient–provider relationship is created.</p>
-        <label class="agree"><input type="checkbox" class="cl" id="c-notreat"> I understand</label>
-      </div>
-
-      <div class="clause">
-        <h4>8. Stopping future use</h4>
-        <p>I can ask the Practice to stop future use of the Recordings by contacting it. Content that has already been published or printed may not be removable.</p>
-        <label class="agree"><input type="checkbox" class="cl" id="c-revoke"> I understand</label>
-      </div>
     </div>
 
-    <div class="progress"><div class="bar-track"><i id="prog-bar"></i></div><span id="prog-txt">0 of 8 agreed</span></div>
+    <div class="progress"><div class="bar-track"><i id="prog-bar"></i></div><span id="prog-txt">0 of 3 agreed</span></div>
     <div class="err" id="clause-err">Please read and check every section above.</div>
   </section>
 
@@ -292,7 +262,7 @@
     <div class="sig-box" id="sig-box">
       <canvas id="sig"></canvas>
       <div class="sig-line"></div>
-      <div class="sig-ph" id="sig-ph">Agree to all 8 sections above to sign</div>
+      <div class="sig-ph" id="sig-ph">Agree to all 3 sections above to sign</div>
     </div>
     <div class="sig-row"><span id="sig-name">Printed name: —</span><button type="button" class="link" id="sig-clear">Clear</button></div>
     <div class="sig-row"><span id="sig-date"></span></div>
@@ -308,7 +278,7 @@
   <h2>The truth<br>about teeth.</h2>
   <p>You’re all set. Watch your Instagram — we’ll tag you when your interview drops.</p>
   <p class="test-note" id="test-note" hidden>Test mode: nothing was saved. Connect the Google Sheet to start collecting.</p>
-  <a class="follow" id="follow" href="https://www.instagram.com/therealmiamidentists/" target="_blank" rel="noopener">Follow @therealmiamidentists</a>
+  <a class="follow" id="follow" href="https://www.instagram.com/" target="_blank" rel="noopener">Follow @therealmiamidentists</a>
 </section>
 </main>
 
@@ -454,8 +424,8 @@ $("f").addEventListener("submit", async e => {
     instagram: handle ? "@" + handle : "",
     instagram_confirmed: $("ig-confirm").checked,
     tag_me: $("tag").checked,
-    consent_video: $("c-video").checked,
-    consent_photo: $("c-photo").checked,
+    consent_video: $("c-media").checked,
+    consent_photo: $("c-media").checked,
     consent_social_name: $("c-social").checked,
     clauses_agreed: [...document.querySelectorAll(".cl")].filter(c => c.checked).map(c => c.id).join(", "),
     is_minor: minor,
